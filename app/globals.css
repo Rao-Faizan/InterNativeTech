@@ -1,0 +1,75 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+  }
+}
+
+.container {
+  @apply mx-auto px-4;
+}
+
+/* Custom styles for light/dark mode transitions */
+html {
+  @apply transition-colors duration-200;
+}
+
+/* Custom button styles */
+.btn {
+  @apply inline-flex h-10 items-center justify-center rounded-md px-4 py-2 text-sm font-medium transition-colors focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+}
+
+.btn-primary {
+  @apply bg-green-600 text-white hover:bg-green-700;
+}
+
+.btn-outline {
+  @apply border border-gray-300 dark:border-gray-700 bg-transparent text-gray-900 dark:text-gray-100 hover:bg-gray-100 dark:hover:bg-gray-800;
+}
+
+.btn-white-outline {
+  @apply border border-white bg-transparent text-white hover:bg-white hover:text-green-600;
+}
+
+/* Custom card styles */
+.card {
+  @apply rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800;
+}
+
+/* Custom form input styles */
+.form-input {
+  @apply flex h-10 w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-800 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900;
+}
+
+/* Custom section styles */
+.section {
+  @apply py-16 md:py-24;
+}
+
+.section-alt {
+  @apply py-16 md:py-24 bg-gray-100 dark:bg-gray-800;
+}
+
+.section-primary {
+  @apply py-16 md:py-24 bg-green-600 text-white;
+}
+
+/* Hero section styles */
+.hero {
+  @apply relative overflow-hidden bg-black py-20;
+}
+
+.hero-overlay {
+  @apply absolute inset-0 z-10 bg-cover bg-center opacity-20;
+}
+
+.hero-gradient {
+  @apply absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40;
+}
+
+.hero-content {
+  @apply container relative z-30 mx-auto px-4;
+}
