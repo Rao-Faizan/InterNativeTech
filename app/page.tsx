@@ -4,59 +4,49 @@ import { Monitor, Smartphone, BarChart4, ArrowRight } from "lucide-react"
 
 export default function Home() {
   return (
-    <div className="bg-white dark:bg-gray-900">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-black py-20 md:py-32">
-        <div className="absolute inset-0 z-10 bg-[url('/placeholder.svg?height=800&width=1600')] bg-cover bg-center opacity-20"></div>
-        <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
-        <div className="container relative z-30 mx-auto px-4 grid gap-8 md:grid-cols-2 md:gap-12 items-center">
-          <div className="flex flex-col gap-4">
-            <div className="space-y-2">
-              <h2 className="text-sm font-medium uppercase tracking-widest text-green-500">INNOVATIVE SOLUTIONS</h2>
-              <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl text-white">
-                TRANSFORMING IDEAS INTO DIGITAL REALITY
-              </h1>
-            </div>
-            <p className="max-w-[600px] text-gray-300 md:text-lg">
-              Your Software House delivers cutting-edge software solutions that drive business growth and digital
-              transformation. Our expert team creates custom applications tailored to your unique needs.
-            </p>
-            <div className="flex flex-col gap-2 min-[400px]:flex-row">
-              <Link
-                href="/contact"
-                className="inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 w-full min-[400px]:w-auto"
-              >
-                Get Started
-              </Link>
-              <Link
-                href="/services"
-                className="inline-flex h-10 items-center justify-center rounded-md border border-gray-300 bg-transparent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-100/10 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 w-full min-[400px]:w-auto"
-              >
-                Explore Services
-              </Link>
-            </div>
-          </div>
-          <div className="relative aspect-video overflow-hidden rounded-lg border border-gray-700 md:aspect-square">
-            <Image
-              src="/placeholder.svg?height=600&width=600"
-              alt="Modern office space with developers working"
-              fill
-              className="object-cover"
-              priority
-            />
-            <div className="absolute bottom-0 left-0 right-0 flex justify-between bg-gray-900/80 backdrop-blur-sm p-4">
-              <div className="text-center">
-                <p className="text-3xl font-bold text-white">350+</p>
-                <p className="text-sm text-gray-300">Happy Clients</p>
-              </div>
-              <div className="text-center">
-                <p className="text-3xl font-bold text-white">400+</p>
-                <p className="text-sm text-gray-300">Success Projects</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+    <div className="bg-white dark:bg-gray-200">
+    
+
+
+    <section className="relative h-screen overflow-hidden bg-black">
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 z-10 bg-cover bg-center opacity-30"
+    style={{ backgroundImage: "url('/Home_banner.png')" }}
+  ></div>
+
+  {/* Gradient Overlay */}
+  <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
+
+  {/* Centered Content */}
+  <div className="relative z-30 flex items-center justify-center h-full">
+    <div className="text-center px-4 max-w-2xl">
+      <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl text-white">
+        Welcome to innovative labs
+      </h1>
+      <p className="mt-4 text-gray-300 md:text-lg">
+        Your Software House delivers cutting-edge software solutions that drive business growth and digital
+        transformation. Our expert team creates custom applications tailored to your unique needs.
+      </p>
+      <div className="mt-6 flex flex-col gap-2 min-[400px]:flex-row justify-center">
+        <Link
+          href="/contact"
+          className="inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 w-full min-[400px]:w-auto"
+        >
+          Get Started
+        </Link>
+        <Link
+          href="/services"
+          className="inline-flex h-10 items-center justify-center rounded-md border border-gray-300 bg-transparent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-100/10 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 w-full min-[400px]:w-auto"
+        >
+          Explore Services
+        </Link>
+      </div>
+    </div>
+  </div>
+</section>
+
+
 
       {/* Featured Services */}
       <section className="py-16 md:py-24 dark:bg-gray-900">
@@ -77,8 +67,7 @@ export default function Home() {
                   <Monitor className="h-6 w-6 text-green-600 dark:text-green-500" />
                 </div>
                 <h3 className="text-xl font-semibold dark:text-white">Web Development</h3>
-              </div>
-              <div>
+              </div>              <div>
                 <p className="text-gray-600 dark:text-gray-400 text-base">
                   Custom websites and web applications built with cutting-edge technologies to deliver exceptional user
                   experiences and drive business growth.
