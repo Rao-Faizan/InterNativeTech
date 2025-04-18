@@ -21,25 +21,25 @@ export default function Home() {
   {/* Centered Content */}
   <div className="relative z-30 flex items-center justify-center h-full">
     <div className="text-center px-4 max-w-2xl">
-      <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl text-white">
-        Welcome to innovative labs
-      </h1>
-      <p className="mt-4 text-gray-300 md:text-lg">
-        Your Software House delivers cutting-edge software solutions that drive business growth and digital
-        transformation. Our expert team creates custom applications tailored to your unique needs.
+    <h1
+  className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
+  style={{ color: '#88a19b' }} // greenish-gray
+>
+  Think Digital With InterNative Tech
+</h1>
+
+     <p className="mt-4 text-gray-300 md:text-lg">
+      We are a company helping people understand their audience and sell ideas quickly, efficiently, and effectively.
+
+
       </p>
       <div className="mt-6 flex flex-col gap-2 min-[400px]:flex-row justify-center">
-        <Link
-          href="/contact"
-          className="inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 w-full min-[400px]:w-auto"
-        >
-          Get Started
-        </Link>
+       
         <Link
           href="/services"
           className="inline-flex h-10 items-center justify-center rounded-md border border-gray-300 bg-transparent px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-100/10 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 w-full min-[400px]:w-auto"
         >
-          Explore Services
+          Call now
         </Link>
       </div>
     </div>
