@@ -30,7 +30,7 @@ export default function AboutPage() {
           <div className="grid gap-8 md:grid-cols-2 md:gap-12 items-center">
             <div className="relative aspect-video overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 md:aspect-square">
               <Image
-                src="/placeholder.svg?height=600&width=600"
+                src="https://media.istockphoto.com/id/1029035836/photo/ai-robot-thinking.jpg?s=612x612&w=0&k=20&c=Lf-nilserdw8BVnHPKtkkSbw7Pcp5p7KI_V9CAlzqQI="
                 alt="Our team working together"
                 fill
                 className="object-cover"
@@ -145,10 +145,10 @@ export default function AboutPage() {
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { name: "Alex Johnson", role: "CEO & Founder" },
-              { name: "Sarah Williams", role: "CTO" },
-              { name: "Michael Chen", role: "Lead Developer" },
-              { name: "Emily Rodriguez", role: "UX/UI Designer" },
+              { name: "Abdul Mateen", role: "CEO & Founder" },
+              { name: "Faizan Rao", role: "CTO" },
+              { name: "Syed Mudassir Ali", role: "Lead Developer" },
+              { name: "Ubaid Qureshi", role: "UX/UI Designer" },
             ].map((member, index) => (
               <div
                 key={index}

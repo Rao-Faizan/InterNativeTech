@@ -11,9 +11,7 @@ export function About() {
         <div className="flex flex-col gap-4">
           <div className="space-y-2">
             <h2 className="text-sm font-medium uppercase tracking-widest text-primary">ABOUT US</h2>
-            <h3 className="text-3xl font-bold tracking-tight md:text-4xl">
-              We Build Digital Solutions For Your Business
-            </h3>
+            
           </div>
           <p className="text-muted-foreground">
             Founded in 2020, Your Software House has quickly established itself as a leader in digital transformation.
