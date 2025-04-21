@@ -4,19 +4,19 @@ import { Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react"
 
 export function Footer() {
   return (
-    <footer className="bg-gray-100 dark:bg-gray-800 py-12 md:py-16">
+    <footer className="bg-gray-100 dark:bg-[#FEEFEE] py-12 md:py-16">
       <div className="container mx-auto px-4">
         <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
             <Link href="/" className="flex items-center gap-2">
               <Image
-                src="/placeholder.svg?height=40&width=40"
+                src="\logo web.png"
                 alt="Logo"
-                width={40}
+                width={200}
                 height={40}
-                className="h-10 w-10"
+                // className="h-10 w-10"
               />
-              <span className="text-xl font-bold text-green-600 dark:text-green-500">YourSoftware</span>
+              {/* <span className="text-xl font-bold text-green-600 dark:text-green-500">YourSoftware</span> */}
             </Link>
             <p className="text-gray-600 dark:text-gray-400">
               Your Software House is a full-service digital agency helping businesses thrive in the online world.

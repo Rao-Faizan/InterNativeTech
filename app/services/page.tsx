@@ -319,7 +319,7 @@ export default function ServicesPage() {
   const services = [
     
     {
-      icon: <Smartphone className="h-6 w-6 text-green-600 dark:text-green-500" />,
+      icon: <Smartphone className="h-6 w-6 text-green-600 dark:[#035F5C] "/>,
       title: "Mobile Development",
       description:
         "Native and cross-platform mobile applications that provide seamless experiences across iOS and Android devices, helping you reach your customers wherever they are.",
@@ -421,8 +421,8 @@ export default function ServicesPage() {
         <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
         <div className="container relative z-30 mx-auto px-4">
           <div className="mx-auto max-w-[800px] text-center">
-            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white">Our Services</h1>
-            <p className="text-xl text-gray-300">
+            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-[#8DA7BE]">Our Services</h1>
+            <p className="text-xl text-[#FEEFEE]">
               Comprehensive software development and digital solutions tailored to your business needs.
             </p>
           </div>
@@ -433,11 +433,11 @@ export default function ServicesPage() {
       <section className="py-16 md:py-24 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="mx-auto mb-12 max-w-[800px] text-center">
-            <h2 className="text-sm font-medium uppercase tracking-widest text-green-600 dark:text-green-500 mb-2">
+            <h2 className="text-sm font-medium uppercase tracking-widest text-[#FEEFEE]">
               WHAT WE OFFER
             </h2>
-            <h3 className="text-3xl font-bold tracking-tight md:text-4xl mb-4 dark:text-white">Our Expertise</h3>
-            <p className="text-gray-600 dark:text-gray-400">
+            <h3 className="text-3xl font-bold tracking-tight md:text-4xl mb-4 dark:text-[#8DA7BE]">Our Expertise</h3>
+            <p className="text-[#FEEFEE]">
               We provide a wide range of services to help businesses thrive in the digital landscape. Our team of
               experts is dedicated to delivering high-quality solutions tailored to your specific needs.
             </p>
@@ -489,25 +489,25 @@ export default function ServicesPage() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {[
               {
-                step: "01",
+                // step: "01",
                 title: "Discovery",
                 description:
                   "We start by understanding your business, goals, and requirements through in-depth consultations.",
               },
               {
-                step: "02",
+                // step: "02",
                 title: "Planning",
                 description:
                   "Our team creates a detailed project plan, including timelines, milestones, and resource allocation.",
               },
               {
-                step: "03",
+                // step: "03",
                 title: "Development",
                 description:
                   "We build your solution using agile methodologies, ensuring regular updates and feedback integration.",
               },
               {
-                step: "04",
+                // step: "04",
                 title: "Delivery",
                 description:
                   "After thorough testing, we deploy your solution and provide ongoing support and maintenance.",
@@ -517,9 +517,9 @@ export default function ServicesPage() {
                 key={index}
                 className="relative overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6"
               >
-                <div className="absolute -top-4 -left-4 text-8xl font-bold text-green-100 dark:text-green-900/30">
+                {/* <div className="absolute -top-4 -left-4 text-8xl font-bold text-green-100 dark:text-green-900/30">
                   {process.step}
-                </div>
+                </div> */}
                 <div className="relative">
                   <h4 className="text-xl font-bold mb-2 dark:text-white">{process.title}</h4>
                   <p className="text-gray-600 dark:text-gray-400">{process.description}</p>

@@ -191,7 +191,7 @@ export default function Home() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-16 md:py-24 bg-green-600 text-white">
+      <section className="py-16 md:py-24 bg-[#035F57] text-white">
         <div className="container mx-auto px-4">
           <div className="mx-auto max-w-[800px] text-center">
             <h2 className="text-3xl font-bold tracking-tight md:text-4xl mb-4">Ready to Start Your Project?</h2>
@@ -200,7 +200,7 @@ export default function Home() {
             </p>
             <Link
               href="/contact"
-              className="inline-flex h-10 items-center justify-center rounded-md border border-white bg-transparent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white hover:text-green-600 focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600"
+              className="inline-flex h-10 items-center justify-center rounded-md border border-white bg-transparent px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-white hover:text-[#035F57] focus:outline-none focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-green-600"
             >
               Contact Us Today
             </Link>
