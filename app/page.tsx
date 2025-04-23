@@ -25,11 +25,11 @@ export default function Home() {
   className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl"
   style={{ color: '#88a19b' }} // greenish-gray
 >
-  Think Digital With InterNative Tech
+  WELCOME TO INTERNATIVE TECH
 </h1>
 
      <p className="mt-4 text-gray-300 md:text-lg">
-      We are a company helping people understand their audience and sell ideas quickly, efficiently, and effectively.
+      A solution oriented workforce management service provider
 
 
       </p>
@@ -157,7 +157,7 @@ export default function Home() {
                 <div className="p-0">
                   <div className="group relative overflow-hidden rounded-lg">
                     <Image
-                      src={`/placeholder.svg?height=400&width=600&text=Project+${item}`}
+                      src={`C:\Users\ait-mudassir\Desktop\software-house--2-\public\Faizan.pic.png`}
                       alt={`Project ${item}`}
                       width={600}
                       height={400}

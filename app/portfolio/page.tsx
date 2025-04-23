@@ -82,10 +82,13 @@ export default function PortfolioPage() {
         <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
         <div className="container relative z-30 mx-auto px-4">
           <div className="mx-auto max-w-[800px] text-center">
-            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white">Our Portfolio</h1>
+            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white">AMAZING WORKS</h1>
             <p className="text-xl text-gray-300">
-              Explore our showcase of successful projects and innovative solutions.
+            Creativity involves breaking out of expected & repeatable patterns in order to look at things in different way than ever before.
+
             </p>
+            
+          
           </div>
         </div>
       </section>

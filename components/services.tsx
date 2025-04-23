@@ -72,7 +72,7 @@ export function Services() {
     <section id="services" className="py-16 md:py-24">
       <div className="container">
         <div className="mx-auto mb-12 max-w-[800px] text-center">
-          <h2 className="text-sm font-medium uppercase tracking-widest text-primary mb-2">OUR </h2>
+          {/* <h2 className="text-sm font-medium uppercase tracking-widest text-primary mb-2">OUR </h2> */}
           <h3 className="text-3xl font-bold tracking-tight md:text-4xl mb-4">What We Offer</h3>
           <p className="text-muted-foreground">
             We provide comprehensive digital solutions to help your business grow and succeed in the digital landscape.
