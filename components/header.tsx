@@ -1,6 +1,6 @@
 "use client"
 
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import Link from "next/link"
 import Image from "next/image"
 import { usePathname } from "next/navigation"
@@ -24,20 +24,27 @@ export function Header() {
 
   const isActive = (path: string) => pathname === path
 
-  const getHeaderBackground = () => {
-    if (theme === "dark") {
-      return "bg-gradient-to-r from-accent to-primary";
-    } else if (theme === "light") {
-      return "bg-gradient-to-r from-secondary to-primary"
+  const [resolvedTheme, setResolvedTheme] = useState<"light" | "dark">("light")
+
+  useEffect(() => {
+    if (theme === "system") {
+      const isDark = window.matchMedia("(prefers-color-scheme: dark)").matches
+      setResolvedTheme(isDark ? "dark" : "light")
     } else {
-      // System theme (match system preference)
-      if (window.matchMedia("(prefers-color-scheme: dark)").matches) {
-        return "bg-gradient-to-r from-accent to-primary"; // System dark mode
-      } else {
-        return "bg-gradient-to-r from-secondary to-primary"; // System light mode
-      }
+      setResolvedTheme(theme as "light" | "dark")
+    }
+  }, [theme])
+
+  const getHeaderBackground = () => {
+    if (resolvedTheme === "dark") {
+      return "bg-gradient-to-r from-accent to-primary"
+    } else {
+      return "bg-gradient-to-r from-secondary to-primary"
     }
   }
+
+
+
 
   return (
     <header className={`sticky top-0 z-50 w-full backdrop-blur-md shadow-md ${getHeaderBackground()}`}>

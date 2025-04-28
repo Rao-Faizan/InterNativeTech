@@ -5,91 +5,91 @@ import { FaDesktop, FaMobileAlt, FaChartBar, FaArrowRight } from "react-icons/fa
 import { Testimonials } from "@/components/testimonials";
 
 export default function Home() {
-  useEffect(() => {
-    // Initialize animations
-    if (typeof window !== 'undefined') {
-      // Animate hero section
-      gsap.from(".hero-title", {
-        duration: 1.2,
-        y: 50,
-        opacity: 0,
-        ease: "power3.out",
-        delay: 0.3
-      });
+  // useEffect(() => {
+  //   // Initialize animations
+  //   if (typeof window !== 'undefined') {
+  //     // Animate hero section
+  //     gsap.from(".hero-title", {
+  //       duration: 1.2,
+  //       y: 50,
+  //       opacity: 0,
+  //       ease: "power3.out",
+  //       delay: 0.3
+  //     });
       
-      gsap.from(".hero-subtitle", {
-        duration: 1,
-        y: 30,
-        opacity: 0,
-        ease: "power3.out",
-        delay: 0.6
-      });
+  //     gsap.from(".hero-subtitle", {
+  //       duration: 1,
+  //       y: 30,
+  //       opacity: 0,
+  //       ease: "power3.out",
+  //       delay: 0.6
+  //     });
       
-      gsap.from(".hero-button", {
-        duration: 0.8,
-        y: 20,
-        opacity: 0,
-        ease: "power3.out",
-        delay: 0.9
-      });
+  //     gsap.from(".hero-button", {
+  //       duration: 0.8,
+  //       y: 20,
+  //       opacity: 0,
+  //       ease: "power3.out",
+  //       delay: 0.9
+  //     });
 
-      // Animate section headings
-      gsap.utils.toArray(".section-heading").forEach((section: any) => {
-        gsap.from(section, {
-          scrollTrigger: {
-            trigger: section,
-            start: "top 80%",
-          },
-          y: 40,
-          opacity: 0,
-          duration: 0.8,
-          ease: "power3.out"
-        });
-      });
+  //     // Animate section headings
+  //     gsap.utils.toArray(".section-heading").forEach((section: any) => {
+  //       gsap.from(section, {
+  //         scrollTrigger: {
+  //           trigger: section,
+  //           start: "top 80%",
+  //         },
+  //         y: 40,
+  //         opacity: 0,
+  //         duration: 0.8,
+  //         ease: "power3.out"
+  //       });
+  //     });
 
-      // Animate service cards
-      gsap.utils.toArray(".service-card").forEach((card: any, i) => {
-        gsap.from(card, {
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-          },
-          y: 50,
-          opacity: 0,
-          duration: 0.6,
-          ease: "power3.out",
-          delay: i * 0.1
-        });
-      });
+  //     // Animate service cards
+  //     gsap.utils.toArray(".service-card").forEach((card: any, i) => {
+  //       gsap.from(card, {
+  //         scrollTrigger: {
+  //           trigger: card,
+  //           start: "top 85%",
+  //         },
+  //         y: 50,
+  //         opacity: 0,
+  //         duration: 0.6,
+  //         ease: "power3.out",
+  //         delay: i * 0.1
+  //       });
+  //     });
 
-      // Animate project cards
-      gsap.utils.toArray(".project-card").forEach((card: any, i) => {
-        gsap.from(card, {
-          scrollTrigger: {
-            trigger: card,
-            start: "top 85%",
-          },
-          y: 60,
-          opacity: 0,
-          duration: 0.7,
-          ease: "power3.out",
-          delay: i * 0.15
-        });
-      });
+  //     // Animate project cards
+  //     gsap.utils.toArray(".project-card").forEach((card: any, i) => {
+  //       gsap.from(card, {
+  //         scrollTrigger: {
+  //           trigger: card,
+  //           start: "top 85%",
+  //         },
+  //         y: 60,
+  //         opacity: 0,
+  //         duration: 0.7,
+  //         ease: "power3.out",
+  //         delay: i * 0.15
+  //       });
+  //     });
 
-      // Animate CTA section
-      gsap.from(".cta-section", {
-        scrollTrigger: {
-          trigger: ".cta-section",
-          start: "top 80%",
-        },
-        y: 50,
-        opacity: 0,
-        duration: 1,
-        ease: "power3.out"
-      });
-    }
-  }, []);
+  //     // Animate CTA section
+  //     gsap.from(".cta-section", {
+  //       scrollTrigger: {
+  //         trigger: ".cta-section",
+  //         start: "top 80%",
+  //       },
+  //       y: 50,
+  //       opacity: 0,
+  //       duration: 1,
+  //       ease: "power3.out"
+  //     });
+  //   }
+  // }, []);
 
   return (
     <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
