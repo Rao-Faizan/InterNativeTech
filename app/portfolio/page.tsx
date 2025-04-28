@@ -256,13 +256,7 @@ export default function PortfolioPage() {
       description: "Elegant websites for beauty, salon, and cosmetic businesses.",
       clientLinks: [
         { name: "LUX131", url: "https://lux131.com/" },
-        { name: "Lily Caree", url: "https://www.lilycaree.com/" },
-        { name: "Reality Skin Essentials", url: "https://realityskinessentials.com/" },
-        { name: "Gradation LA", url: "https://gradationla.com/" },
-        { name: "Skin Glow Cosmetic", url: "https://skinglowcosmetic.com/" },
-        { name: "KLB Organics", url: "https://www.klborganics.com/" },
-        { name: "Rawrio Hair", url: "http://rawriohair.com/" },
-        { name: "Glory Gold Label", url: "https://glorygoldlabel.com/" }
+        
       ]
     },
     {
@@ -273,10 +267,7 @@ export default function PortfolioPage() {
       description: "Professional websites for medical and healthcare providers.",
       clientLinks: [
         { name: "Quality Nurse Travellers", url: "https://qualitynursetravellers.com/" },
-        { name: "Sunshine Healthcare", url: "https://sunshinehealthcare-llc.com/" },
-        { name: "Cara Writes", url: "https://cara-writes.com/" },
-        { name: "Kathleen Adams PhD", url: "https://kathleenadamsphd.com/" },
-        { name: "OnPoint Medical Services", url: "https://onpointmedicalservices.com/" }
+       
       ]
     },
     {
@@ -287,11 +278,7 @@ export default function PortfolioPage() {
       description: "Delicious websites for food and restaurant businesses.",
       clientLinks: [
         { name: "Le Mugs", url: "https://le-mugs.com/" },
-        { name: "Mike's Organic Delivery", url: "https://mikesorganicdelivery.com/" },
-        { name: "Porter & York", url: "https://porterandyork.com/" },
-        { name: "Cuisine Culture", url: "http://cuisineculture.tv/" },
-        { name: "Dead Life Clothings", url: "http://deadlifeclothings.com/" },
-        { name: "Sovereign Sam", url: "https://sovereignsam.com/" }
+        
       ]
     },
     {
@@ -302,12 +289,7 @@ export default function PortfolioPage() {
       description: "Stylish websites for fashion brands and boutiques.",
       clientLinks: [
         { name: "Toms", url: "https://www.toms.com/" },
-        { name: "Mia Shoes", url: "https://www.miashoes.com/" },
-        { name: "Mr. Okhtein", url: "https://mr.okhtein.com/" },
-        { name: "Mita Eyewear", url: "https://mita-eyewear.com/" },
-        { name: "Salty K Swim", url: "https://saltykswim.com/" },
-        { name: "Luxery by Sandra", url: "https://luxerybysandra.com/" },
-        { name: "Rocking B Boutique", url: "https://rockingbboutique.com/" }
+        
       ]
     },
     {
@@ -318,11 +300,7 @@ export default function PortfolioPage() {
       description: "Powerful e-commerce solutions for product selling businesses.",
       clientLinks: [
         { name: "Joco Cups", url: "https://jococups.com/usa/" },
-        { name: "Dark Horse", url: "http://dark-horse.co.za/" },
-        { name: "Enovation Brands", url: "https://enovationbrands.com/" },
-        { name: "BAA Designs", url: "https://baadesigns.com/" },
-        { name: "DTC Creativity Crafts", url: "https://dtcreativitycrafts4u.com/" },
-        { name: "Susu Pot", url: "http://susupot.com/" }
+         
       ]
     },
     {
@@ -333,10 +311,7 @@ export default function PortfolioPage() {
       description: "Engaging websites for books, toys and games businesses.",
       clientLinks: [
         { name: "Biblio", url: "https://www.biblio.com/" },
-        { name: "The Bookstress", url: "https://thebookstress.com/" },
-        { name: "Toywiz", url: "https://toywiz.com/" },
-        { name: "Esports", url: "https://esports.strose.edu/" },
-        { name: "Lotro GC", url: "http://lotrogc.com/" }
+        
       ]
     },
     {
@@ -347,10 +322,7 @@ export default function PortfolioPage() {
       description: "Professional websites for finance and service providers.",
       clientLinks: [
         { name: "Kennedy Wilson", url: "https://www.kennedywilson.com/" },
-        { name: "Goldstar Merchant Services", url: "https://goldstarmerchantservices.com/" },
-        { name: "U Rent It All", url: "http://urentitall.com/" },
-        { name: "The Original Cash for Cars", url: "https://theoriginalcashforcars.com/" },
-        { name: "BEP Caregiver", url: "https://bepcaregiver.com/" }
+         
       ]
     },
     {
@@ -360,12 +332,7 @@ export default function PortfolioPage() {
       image: "https://images.unsplash.com/photo-1586671267731-da2cf3ceeb80?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1858&q=80",
       description: "Beautiful websites for pets, music and lifestyle businesses.",
       clientLinks: [
-        { name: "Pawgers Pet Love", url: "https://pawgerspetlove.com/" },
-        { name: "Pearls N Curls", url: "http://pearlsncurls.com/" },
-        { name: "Marvin Gray", url: "https://marvingray.com/" },
-        { name: "61 Sev Kev", url: "http://www.61sevkev.com/" },
-        { name: "Nina Dryden Coaching", url: "https://ninadrydencoaching.com/" },
-        { name: "Hello Wonderful Podcast", url: "http://hellowonderfulpodcast.com/" }
+      { name: "Pawgers Pet Love", url: "https://pawgerspetlove.com/" },
       ]
     }
   ]
@@ -422,21 +389,9 @@ export default function PortfolioPage() {
                       <div className="text-white text-center mb-4">
                         <h3 className="text-xl font-bold mb-2">Client Websites:</h3>
                         <div className="grid grid-cols-1 gap-2">
-                          {project.clientLinks.slice(0, 3).map((link, index) => (
-                            <a 
-                              key={index}
-                              href={link.url} 
-                              target="_blank" 
-                              rel="noopener noreferrer"
-                              className="text-white hover:text-green-300 text-sm underline"
-                            >
-                              {link.name}
-                            </a>
-                          ))}
+                             
                         </div>
-                        {project.clientLinks.length > 3 && (
-                          <p className="text-sm mt-2">+ {project.clientLinks.length - 3} more</p>
-                        )}
+                      
                       </div>
                       <Link
                         href={`/portfolio/${project.id}`}
