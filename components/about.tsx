@@ -1,40 +1,153 @@
-// import Image from "next/image"
-// import { Button } from "@/components/ui/button"
+"use Client"
+import Image from "next/image"
+import { FaCheckCircle } from "react-icons/fa"
 
-// export function About() {
-//   return (
-//     <section id="about" className="py-16 md:py-24 bg-muted/50">
-//       <div className="container grid gap-8 md:grid-cols-2 md:gap-12 items-center">
-//         <div className="relative aspect-video overflow-hidden rounded-lg border md:aspect-square">
-//           <Image src="/placeholder.svg?height=600&width=600" alt="Team working" fill className="object-cover" />
-//         </div>
-//         <div className="flex flex-col gap-4">
-//           <div className="space-y-2">
-//             <h2 className="text-sm font-medium uppercase tracking-widest text-primary">ABOUT US</h2>
-            
-//           </div>
-//           <p className="text-muted-foreground">
-//             Founded in 2020, Your Software House has quickly established itself as a leader in digital transformation.
-//             Our team of experienced developers, designers, and digital marketers work together to deliver exceptional
-//             results for our clients.
-//           </p>
-//           <p className="text-muted-foreground">
-//             We believe in a collaborative approach, working closely with our clients to understand their unique
-//             challenges and goals. This enables us to create tailored solutions that drive real business growth.
-//           </p>
-//           <div className="grid grid-cols-2 gap-4 pt-4">
-//             <div>
-//               <p className="text-3xl font-bold">5+</p>
-//               <p className="text-sm text-muted-foreground">Years Experience</p>
-//             </div>
-//             <div>
-//               <p className="text-3xl font-bold">30+</p>
-//               <p className="text-sm text-muted-foreground">Team Members</p>
-//             </div>
-//           </div>
-//           <Button className="w-fit mt-2">Learn More</Button>
-//         </div>
-//       </div>
-//     </section>
-//   )
-// }
+export function About() {
+
+
+  return (
+    <div className="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
+      {/* Hero Section */}
+      <section className="relative overflow-hidden bg-black py-20">
+        <div className="absolute inset-0 z-10 bg-[url('/placeholder.svg?height=800&width=1600')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
+        <div className="container relative z-30 mx-auto px-4">
+          <div className="mx-auto max-w-[800px] text-center">
+            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
+              About Us</h1>
+            <p className="text-xl text-gray-300">
+              We're a team of passionate developers, designers, and strategists building exceptional software solutions.
+            </p>
+          </div>
+        </div>
+      </section>
+      {/* Our Story */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">
+
+          <div className="relative aspect-video md:aspect-square overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 shadow-md">
+            <Image
+              src="https://media.istockphoto.com/id/1029035836/photo/ai-robot-thinking.jpg?s=612x612&w=0&k=20&c=Lf-nilserdw8BVnHPKtkkSbw7Pcp5p7KI_V9CAlzqQI="
+              alt="Our team"
+              fill
+              className="object-cover hover:scale-105 transition-transform duration-500"
+            />
+          </div>
+
+          <div className="flex flex-col gap-6">
+            <div className="space-y-2">
+              <h2 className="text-sm font-semibold uppercase tracking-wider text-green-600 dark:text-green-400">Our Story</h2>
+              <h3 className="text-3xl md:text-4xl font-bold">From Humble Beginnings to Industry Leaders</h3>
+            </div>
+            <p className="text-gray-600 dark:text-gray-400">
+              Founded in 2020, Your Software House started with a dream in a small office. Passion, innovation, and relentless commitment helped us become trusted technology partners for businesses worldwide.
+            </p>
+            <p className="text-gray-600 dark:text-gray-400">
+              Today, a talented team of 30+ professionals powers cutting-edge digital experiences, building lasting partnerships along the way.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* Mission & Values */}
+      <section className="py-16 md:py-24 bg-gray-100 dark:bg-gray-900">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-green-600 dark:text-green-400 mb-3">Our Mission & Values</h2>
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">What Drives Us Forward</h3>
+          <p className="max-w-2xl mx-auto mb-12 text-gray-600 dark:text-gray-400">
+            Our mission and values are the heart of every project we deliver.
+          </p>
+
+          <div className="grid gap-8 md:grid-cols-2">
+
+            <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
+              <h4 className="text-2xl font-bold mb-4">Our Mission</h4>
+              <p className="text-gray-600 dark:text-gray-400">
+                Empower businesses through innovative software that drives growth, agility, and digital excellence.
+              </p>
+            </div>
+
+            <div className="rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 p-8 shadow-sm hover:shadow-lg transition-shadow duration-300">
+              <h4 className="text-2xl font-bold mb-6">Our Values</h4>
+              <ul className="space-y-4 text-left">
+                {[
+                  { title: "Excellence", desc: "We uphold the highest standards in everything we do." },
+                  { title: "Innovation", desc: "We embrace new technologies to deliver better solutions." },
+                  { title: "Integrity", desc: "We operate transparently, ethically, and respectfully." },
+                  { title: "Collaboration", desc: "We thrive through teamwork and partnerships." },
+                ].map((item, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <FaCheckCircle className="text-green-600 dark:text-green-400 mt-1 shrink-0" />
+                    <div>
+                      <span className="font-semibold">{item.title}:</span> <span className="text-gray-600 dark:text-gray-400">{item.desc}</span>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+          </div>
+        </div>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-16 md:py-24">
+        <div className="container mx-auto px-4 text-center">
+          <h2 className="text-sm font-semibold uppercase tracking-wider text-green-600 dark:text-green-400 mb-3">Our Team</h2>
+          <h3 className="text-3xl md:text-4xl font-bold mb-6">Meet Our Experts</h3>
+          <p className="max-w-2xl mx-auto mb-12 text-gray-600 dark:text-gray-400">
+            A talented, diverse, and passionate team driving innovation.
+          </p>
+
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {[
+              { name: "Abdul Mateen", role: "CEO & Founder" },
+              { name: "Faizan Rao", role: "CTO" },
+              { name: "Syed Mudassir Ali", role: "Lead Developer" },
+              { name: "Ubaid Qureshi", role: "UX/UI Designer" },
+            ].map((member, idx) => (
+              <div
+                key={idx}
+                className="overflow-hidden rounded-xl border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 shadow-sm hover:shadow-lg transition-shadow duration-300"
+              >
+                <div className="relative aspect-square">
+                  <Image
+                    src={`/placeholder.svg?height=300&width=300&text=${member.name.charAt(0)}`}
+                    alt={member.name}
+                    fill
+                    className="object-cover hover:scale-110 transition-transform duration-500"
+                  />
+                </div>
+                <div className="p-4">
+                  <h4 className="font-bold">{member.name}</h4>
+                  <p className="text-sm text-gray-600 dark:text-gray-400">{member.role}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Stats Section */}
+      <section className="py-12 bg-green-600 text-white">
+        <div className="container mx-auto px-4">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+            {[
+              { value: "350+", label: "Happy Clients" },
+              { value: "400+", label: "Projects Completed" },
+              { value: "30+", label: "Team Members" },
+              { value: "5+", label: "Years Experience" },
+            ].map((stat, idx) => (
+              <div key={idx} className="transition-transform hover:scale-105 duration-300">
+                <p className="text-4xl font-bold">{stat.value}</p>
+                <p className="text-sm opacity-80">{stat.label}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+    </div>
+  )
+
+}

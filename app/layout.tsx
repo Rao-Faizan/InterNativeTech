@@ -9,9 +9,8 @@ import { Footer } from "@/components/footer"
 const inter = Inter({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
-  title: "Your Software House",
+  title: "InterNative tech",
   description: "Full-service software development company",
-    generator: 'v0.dev'
 }
 
 export default function RootLayout({
@@ -33,6 +32,3 @@ export default function RootLayout({
     </html>
   )
 }
-
-
-import './globals.css'

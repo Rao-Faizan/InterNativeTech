@@ -94,36 +94,15 @@ export default function BlogPage() {
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80"></div>
         </div>
         <div className="container relative z-30 mx-auto px-4">
-          <div className="mx-auto max-w-4xl text-center">
-            <span className="mb-3 inline-block rounded-full bg-green-600/10 px-4 py-1.5 text-sm font-medium text-green-500">
-              Latest Insights
-            </span>
-            <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl md:text-6xl">
-              Technology <span className="text-green-500">Insights</span> & News
-            </h1>
-            <p className="mt-6 text-xl text-gray-300">
-              Expert perspectives on web development, mobile apps, cloud computing, and emerging technologies.
-            </p>
-            <div className="mt-8 flex justify-center">
-              <Link
-                href="#featured-posts"
-                className="inline-flex items-center justify-center rounded-md bg-green-600 px-6 py-3 text-sm font-medium text-white transition-all hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900"
-              >
-                Explore Articles
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  className="ml-2 h-4 w-4"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 14l-7 7m0 0l-7-7m7 7V3" />
-                </svg>
-              </Link>
-            </div>
+          <div className="mx-auto max-w-[800px] text-center">
+            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
+              Our Blog</h1>
+            <p className="text-xl text-gray-300">
+              Insights, tutorials, and news from our technology experts.</p>
           </div>
         </div>
       </section>
+
 
       {/* Blog Content */}
       <section className="py-16 md:py-24 dark:bg-gray-900" id="featured-posts">
@@ -145,11 +124,8 @@ export default function BlogPage() {
 
               <div className="space-y-8">
                 {blogPosts.map((post) => (
-                  <article
-                    key={post.id}
-                    className="group overflow-hidden rounded-xl border border-gray-200 bg-white transition-all duration-300 hover:shadow-lg dark:border-gray-700 dark:bg-gray-800 dark:hover:shadow-gray-800/30"
-                  >
-                    <div className="grid gap-0 md:grid-cols-2">
+                  <div key={post.id} className="overflow-hidden rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-800 transition-transform transform hover:scale-105 hover:shadow-lg">
+                    <div className="grid md:grid-cols-2 gap-0">
                       <div className="relative aspect-video md:aspect-square">
                         <Image
                           src={post.image || "/placeholder.svg"}
@@ -209,7 +185,8 @@ export default function BlogPage() {
                         </div>
                       </div>
                     </div>
-                  </article>
+                  </div>
+
                 ))}
               </div>
 
@@ -229,24 +206,12 @@ export default function BlogPage() {
                   <input
                     type="text"
                     placeholder="Search articles..."
-                    className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2.5 pr-10 text-sm text-gray-900 shadow-sm focus:border-green-500 focus:outline-none focus:ring-1 focus:ring-green-500 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:placeholder:text-gray-400"
+                    className="flex h-10 w-full rounded-md border border-gray-300 dark:border-gray-700 bg-white dark:bg-gray-900 px-3 py-2 text-sm text-gray-900 dark:text-gray-100 placeholder:text-gray-500 dark:placeholder:text-gray-400 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900 transition-transform duration-200 transform hover:scale-105"
                   />
-                  <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center pr-3">
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      className="h-5 w-5 text-gray-400"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
-                      />
-                    </svg>
-                  </div>
+
+                  <button className="inline-flex h-10 items-center justify-center rounded-md bg-green-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-green-500 focus:ring-offset-2 dark:focus:ring-offset-gray-900">
+                    Search
+                  </button>
                 </div>
               </div>
 

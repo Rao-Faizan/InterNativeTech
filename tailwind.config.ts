@@ -10,6 +10,27 @@ const config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        mono: ['"Share Tech Mono"', '"Cascadia Code"', 'Menlo', 'Monaco', '"Courier New"', 'monospace'],
+      },
+      animation: {
+        blink: 'blink 1s linear infinite forwards',
+        rotate: 'rotate 100s linear infinite forwards',
+        move: 'move 1s linear infinite forwards',
+      },
+      keyframes: {
+        blink: {
+          '0%, 50%': { visibility: 'visible' },
+          '51%, 100%': { visibility: 'hidden' },
+        },
+        move: {
+          from: { transform: 'translateY(0px)' },
+          to: { transform: 'translateY(calc(var(--grid) * var(--dir)))' },
+        },
+        rotate: {
+          to: { transform: 'rotateY(360deg)' },
+        },
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

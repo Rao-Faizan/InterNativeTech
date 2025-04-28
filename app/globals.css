@@ -2,10 +2,87 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  /* Light mode colors */
+  --background: 356 100% 99%;
+  /* Light background (#feefee) */
+  --foreground: 212 44% 17%;
+  /* Dark blue text (#1c3144) */
+  --primary: 174 94% 19%;
+  /* Dark teal (#035f5c) */
+  --primary-foreground: 0 0% 100%;
+  /* White text on primary */
+  --secondary: 212 24% 67%;
+  /* Soft blue (#8da7be) */
+  --secondary-foreground: 212 44% 17%;
+  /* Darker text */
+  --accent: 60 6% 20%;
+  /* Dark grayish (#32322c) */
+  --accent-foreground: 0 0% 100%;
+  /* White */
+
+  --muted: 212 24% 90%;
+  /* Light muted background */
+  --muted-foreground: 212 24% 40%;
+
+  --card: 0 0% 100%;
+  /* White card */
+  --card-foreground: 212 44% 17%;
+
+  --popover: 0 0% 100%;
+  --popover-foreground: 212 44% 17%;
+
+  --border: 212 24% 80%;
+  --input: 212 24% 80%;
+  --ring: 174 94% 19%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+}
+
+.dark {
+  /* Dark mode colors */
+  --background: 212 44% 17%;
+  /* Deep blue background (#1c3144) */
+  --foreground: 356 100% 99%;
+  /* Light text (#feefee) */
+
+  --primary: 174 94% 19%;
+  /* Same teal */
+  --primary-foreground: 0 0% 100%;
+  --secondary: 212 24% 67%;
+  --secondary-foreground: 0 0% 100%;
+  --accent: 60 6% 20%;
+  --accent-foreground: 0 0% 100%;
+
+  --muted: 212 24% 25%;
+  --muted-foreground: 212 24% 80%;
+
+  --card: 212 24% 20%;
+  /* Darker card background */
+  --card-foreground: 356 100% 99%;
+
+  --popover: 212 24% 20%;
+  --popover-foreground: 356 100% 99%;
+
+  --border: 212 24% 25%;
+  --input: 212 24% 25%;
+  --ring: 174 94% 19%;
+
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 100%;
+}
+
+
 @layer base {
-  body {
-    @apply bg-white text-gray-900 dark:bg-gray-900 dark:text-gray-100;
+  @layer base {
+    body {
+      @apply transition-colors duration-200;
+      background-color: var(--background);
+      color: var(--foreground);
+    }
   }
+
 }
 
 .container {
