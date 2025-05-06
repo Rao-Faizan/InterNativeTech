@@ -24,11 +24,11 @@ export function Footer() {
               InterNative Tech is a full-service digital agency helping businesses thrive in the online world.
             </p>
             <div className="flex gap-3 mt-4">
-              <SocialIcon href="#" Icon={FaFacebookF}  />
-              <SocialIcon href="#" Icon={FaTwitter} />
-              <SocialIcon href="#" Icon={FaInstagram} />
+              <SocialIcon href="https://www.facebook.com/InterNativeTech" Icon={FaFacebookF}  />
+              {/* <SocialIcon href="#" Icon={FaTwitter} /> */}
+              <SocialIcon href="https://www.instagram.com/internative_tech?igsh=ZzJxd252eHBxNXQ=" Icon={FaInstagram} />
               <SocialIcon href="#" Icon={FaLinkedinIn} />
-              <SocialIcon href="#" Icon={FaGithub} />
+              {/* <SocialIcon href="#" Icon={FaGithub} /> */}
             </div>
           </div>
 

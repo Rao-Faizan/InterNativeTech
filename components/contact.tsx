@@ -1,8 +1,10 @@
 "use client"
+import emailjs from '@emailjs/browser';
 
 import type React from "react"
 import { useState } from "react"
 import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from 'react-icons/fa';
+import Ballpit from './Ballpit';
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -19,21 +21,35 @@ export default function Contact() {
     const { name, value } = e.target
     setFormData((prev) => ({ ...prev, [name]: value }))
   }
-
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     setFormStatus(null)
-
-    // Simulating form submission logic
-    setTimeout(() => {
-      // Assuming form submission is successful
-      console.log(formData)
+  
+    const serviceID = 'service_x2exw8n'
+    const templateID = 'template_8kl41gq'
+    const userID = '7qpLD6VysB8J0DPDv'
+  
+    const templateParams = {
+      from_name: formData.name,
+      from_email: formData.email,
+      phone: formData.phone,
+      subject: formData.subject,
+      message: formData.message,
+    }
+  
+    try {
+      await emailjs.send(serviceID, templateID, templateParams, userID)
+      setFormStatus("Shukriya! Aap ka paighaam bhej diya gaya hai.")
       setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
-      setFormStatus("Thank you for your message. We'll get back to you soon!")
+    } catch (error) {
+      console.error('Email send error:', error)
+      setFormStatus("Kuch masla hua, dubara koshish karein.")
+    } finally {
       setIsSubmitting(false)
-    }, 2000) // Simulate network delay
+    }
   }
+  
 
   return (
     <div className="bg-white dark:bg-gray-900">
@@ -41,7 +57,7 @@ export default function Contact() {
       <section className="relative overflow-hidden bg-black py-20">
         <div className="absolute inset-0 z-10 bg-[url('/placeholder.svg?height=800&width=1600')] bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
-        <div className="container relative z-30 mx-auto px-4">
+        {/* <div className="container relative z-30 mx-auto px-4">
           <div className="mx-auto max-w-[800px] text-center">
             <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
               Contact Us
@@ -49,8 +65,40 @@ export default function Contact() {
             <p className="text-xl text-gray-300">
               Get in touch with our team to discuss your project or inquire about our services.
             </p>
-          </div>
-        </div>
+          </div> */}
+        {/* </div> */}
+        <div
+  style={{
+    position: 'relative',
+    overflow: 'hidden',
+    height: '600px', // 👈 Fixed height taake ballpit poora dikh sake
+    width: '100%',
+    paddingTop: '50px', // Text ko neeche se start karaya
+    paddingLeft: '20px',
+    paddingRight: '20px',
+  }}
+>
+  <div style={{ position: 'relative', zIndex: 2 }}>
+    <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white text-center transition-all duration-300 hover:text-green-600">
+    Contact Us
+    </h1>
+    <p className="text-xl text-center text-gray-300 mb-8">
+    Get in touch with our team to discuss your project or inquire about our services.
+    </p>
+  </div>
+
+  {/* Ballpit background mein chalega */}
+  <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
+    <Ballpit
+      count={100}
+      gravity={1.7}
+      friction={1.8}
+      wallBounce={1}
+      followCursor={true}
+    />
+  </div>
+</div>
+
       </section>
 
       {/* Contact Information */}

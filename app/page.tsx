@@ -5,99 +5,14 @@ import { FaDesktop, FaMobileAlt, FaChartBar, FaArrowRight } from "react-icons/fa
 import { Testimonials } from "@/components/testimonials";
 
 export default function Home() {
-  // useEffect(() => {
-  //   // Initialize animations
-  //   if (typeof window !== 'undefined') {
-  //     // Animate hero section
-  //     gsap.from(".hero-title", {
-  //       duration: 1.2,
-  //       y: 50,
-  //       opacity: 0,
-  //       ease: "power3.out",
-  //       delay: 0.3
-  //     });
-      
-  //     gsap.from(".hero-subtitle", {
-  //       duration: 1,
-  //       y: 30,
-  //       opacity: 0,
-  //       ease: "power3.out",
-  //       delay: 0.6
-  //     });
-      
-  //     gsap.from(".hero-button", {
-  //       duration: 0.8,
-  //       y: 20,
-  //       opacity: 0,
-  //       ease: "power3.out",
-  //       delay: 0.9
-  //     });
-
-  //     // Animate section headings
-  //     gsap.utils.toArray(".section-heading").forEach((section: any) => {
-  //       gsap.from(section, {
-  //         scrollTrigger: {
-  //           trigger: section,
-  //           start: "top 80%",
-  //         },
-  //         y: 40,
-  //         opacity: 0,
-  //         duration: 0.8,
-  //         ease: "power3.out"
-  //       });
-  //     });
-
-  //     // Animate service cards
-  //     gsap.utils.toArray(".service-card").forEach((card: any, i) => {
-  //       gsap.from(card, {
-  //         scrollTrigger: {
-  //           trigger: card,
-  //           start: "top 85%",
-  //         },
-  //         y: 50,
-  //         opacity: 0,
-  //         duration: 0.6,
-  //         ease: "power3.out",
-  //         delay: i * 0.1
-  //       });
-  //     });
-
-  //     // Animate project cards
-  //     gsap.utils.toArray(".project-card").forEach((card: any, i) => {
-  //       gsap.from(card, {
-  //         scrollTrigger: {
-  //           trigger: card,
-  //           start: "top 85%",
-  //         },
-  //         y: 60,
-  //         opacity: 0,
-  //         duration: 0.7,
-  //         ease: "power3.out",
-  //         delay: i * 0.15
-  //       });
-  //     });
-
-  //     // Animate CTA section
-  //     gsap.from(".cta-section", {
-  //       scrollTrigger: {
-  //         trigger: ".cta-section",
-  //         start: "top 80%",
-  //       },
-  //       y: 50,
-  //       opacity: 0,
-  //       duration: 1,
-  //       ease: "power3.out"
-  //     });
-  //   }
-  // }, []);
-
+  
   return (
     <div className="bg-white dark:bg-gray-900 transition-colors duration-300">
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         {/* Background Image */}
         <div
-          className="absolute inset-0 z-10 bg-cover bg-center opacity-30"
+          className="absolute inset-0 z-10 bg-cover bg-center  "
           style={{ backgroundImage: "url('/Home_banner.png')" }}
         ></div>
 
@@ -211,32 +126,57 @@ export default function Home() {
           </div>
 
           <div className="grid gap-8 md:grid-cols-3">
-            {[1, 2, 3].map((item) => (
-              <div key={item} className="rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:scale-105 transition-all">
-                <div className="relative group">
-                  <Image
-                    src="/logo.png" // Correct your image path
-                    alt={`Project ${item}`}
-                    width={600}
-                    height={400}
-                    className="w-full object-cover aspect-[4/3] transition-transform group-hover:scale-110"
-                  />
-                  <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
-                    <Link
-                      href={`/portfolio/project-${item}`}
-                      className="inline-flex items-center justify-center rounded-xl border border-white bg-transparent px-4 py-2 text-sm font-medium text-white hover:bg-white hover:text-black"
-                    >
-                      View Details
-                    </Link>
-                  </div>
-                </div>
-                <div className="p-4">
-                  <h4 className="text-lg font-semibold text-gray-900 dark:text-white">Project Title {item}</h4>
-                  <p className="text-sm text-gray-600 dark:text-gray-400">Web Development</p>
-                </div>
-              </div>
-            ))}
-          </div>
+  {[
+    {
+      id: 1,
+      img: '/prepdummy1.jpg',
+      title: 'Preparation Project',
+      description: 'PrepDummy offers high-yield MCQs, live tests, insightful analytics, and expert-led courses to help students excel in exams.Join our supportive community with free classes, guidance sessions, and 24/7 assistance for complete exam preparation.Prepare smarter, achieve better, and build confidence with trusted resources tailored for your success...',
+      link: 'https://prepdummy.com/',
+    },
+    {
+      id: 2,
+      img: '/Ait2.jpg',
+      title: 'AIT Solutions',
+      description: 'AIT empowers students with industry-relevant courses in IT, engineering, and emerging technologies.We offer expert training, hands-on projects, and career support to help you excel in a competitive world.Build your future with AIT — where innovation meets opportunity.',
+      link: 'https://ait.iak.ngo/',
+    },
+    {
+      id: 3,
+      img: '/constraction.jpge.jpeg',
+      title: 'Engineered Solutions Canada',
+      description: 'Engineered Solutions Canada specializes in innovative Boiler House, Domestic Hot Water, Rainwater Harvesting, and Steam Control systems.We deliver top-quality, energy-efficient solutions customized for commercial, industrial, and residential needs.Trusted across Canada, we combine engineering excellence with outstanding customer support.',
+      link: 'https://rainwaterharvesting.services',
+    },
+  ].map((item) => (
+    <div key={item.id} className="rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:scale-105 transition-all">
+      <div className="relative group">
+        <Image
+          src={item.img}
+          alt={item.title}
+          width={600}
+          height={400}
+          className="w-full object-cover aspect-[4/3] transition-transform group-hover:scale-110"
+        />
+        
+        <div className="absolute inset-0 bg-black/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+          <Link
+            href={item.link}
+            className="inline-flex items-center justify-center rounded-xl border border-white bg-transparent px-4 py-2 text-sm font-medium text-white hover:bg-white hover:text-black"
+            target="_blank"
+          >
+            View Details
+          </Link>
+        </div>
+      </div>
+      <div className="p-4">
+        <h4 className="text-lg font-semibold text-gray-900 dark:text-white">{item.title}</h4>
+        <p className="text-sm text-gray-600 dark:text-gray-400">{item.description}</p>
+      </div>
+    </div>
+  ))}
+</div>
+
 
           <div className="mt-12 text-center">
             <Link

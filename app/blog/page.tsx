@@ -1,3 +1,4 @@
+import Ballpit from "@/components/Ballpit"
 import Image from "next/image"
 import Link from "next/link"
 
@@ -93,14 +94,45 @@ export default function BlogPage() {
           <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80"></div>
         </div>
-        <div className="container relative z-30 mx-auto px-4">
+        {/* <div className="container relative z-30 mx-auto px-4">
           <div className="mx-auto max-w-[800px] text-center">
             <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
               Our Blog</h1>
             <p className="text-xl text-gray-300">
               Insights, tutorials, and news from our technology experts.</p>
           </div>
-        </div>
+        </div> */}
+        <div
+  style={{
+    position: 'relative',
+    overflow: 'hidden',
+    height: '600px', // 👈 Fixed height taake ballpit poora dikh sake
+    width: '100%',
+    paddingTop: '50px', // Text ko neeche se start karaya
+    paddingLeft: '20px',
+    paddingRight: '20px',
+  }}
+>
+  <div style={{ position: 'relative', zIndex: 2 }}>
+    <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white text-center transition-all duration-300 hover:text-green-600">
+    Our Blog
+    </h1>
+    <p className="text-xl text-center text-gray-300 mb-8">
+    Insights, tutorials, and news from our technology experts.    </p>
+  </div>
+
+  {/* Ballpit background mein chalega */}
+  <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
+    <Ballpit
+      count={100}
+      gravity={1.7}
+      friction={1.8}
+      wallBounce={1}
+      followCursor={true}
+    />
+  </div>
+</div>
+
       </section>
 
 
