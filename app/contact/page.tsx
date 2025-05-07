@@ -2,7 +2,7 @@ import Contact from "@/components/contact"
 
 
 export const metadata = {
-  title: "Contact | Your Software House",
+  title: "Contact | InterNative Tech",
   description: "Explore our portfolio of successful projects and case studies",
 }
 

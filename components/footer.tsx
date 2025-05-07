@@ -24,9 +24,9 @@ export function Footer() {
               InterNative Tech is a full-service digital agency helping businesses thrive in the online world.
             </p>
             <div className="flex gap-3 mt-4">
-              <SocialIcon href="https://www.facebook.com/InterNativeTech" Icon={FaFacebookF}  />
+              <SocialIcon href="https://www.facebook.com/InterNativeTech" Icon={FaFacebookF} />
               {/* <SocialIcon href="#" Icon={FaTwitter} /> */}
-              <SocialIcon href="https://www.instagram.com/internative_tech?igsh=ZzJxd252eHBxNXQ=" Icon={FaInstagram} />
+              <SocialIcon href="https://www.instagram.com/internative_tech" Icon={FaInstagram} />
               <SocialIcon href="#" Icon={FaLinkedinIn} />
               {/* <SocialIcon href="#" Icon={FaGithub} /> */}
             </div>
@@ -108,12 +108,13 @@ function FooterLink({ href, children }: { href: string; children: React.ReactNod
 
 function SocialIcon({ href, Icon }: { href: string; Icon: React.ElementType }) {
   return (
-    <Link
+    <a
       href={href}
+      target="_blank"
+      rel="noopener noreferrer"
       className="text-gray-500 hover:text-green-600 dark:text-gray-400 dark:hover:text-green-400 transition-colors"
     >
       <Icon className="h-5 w-5" />
-      {/* <span className="sr-only">{Icon.displayName}</span> */}
-    </Link>
+    </a>
   )
 }

@@ -3,7 +3,7 @@ import Image from "next/image"
 import { FaCheckCircle } from "react-icons/fa"
 import Ballpit from "@/components/Ballpit"
 
- export function About() {
+export function About() {
 
 
   return (
@@ -11,39 +11,39 @@ import Ballpit from "@/components/Ballpit"
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-black py-20">
 
-  
-      <div
-  style={{
-    position: 'relative',
-    overflow: 'hidden',
-    height: '600px', // 👈 Fixed height taake ballpit poora dikh sake
-    width: '100%',
-    paddingTop: '50px', // Text ko neeche se start karaya
-    paddingLeft: '20px',
-    paddingRight: '20px',
-  }}
->
-  <div style={{ position: 'relative', zIndex: 2 }}>
-    <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white text-center transition-all duration-300 hover:text-green-600">
-      About Us
-    </h1>
-    <p className="text-xl text-center text-gray-300 mb-8">
-      We're a team of passionate developers, designers, and strategists building exceptional software solutions.
-    </p>
-  </div>
 
-  {/* Ballpit background mein chalega */}
-  <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
-    <Ballpit
-      count={100}
-      gravity={1.7}
-      friction={1.8}
-      wallBounce={1}
-      followCursor={true}
-    />
-  </div>
-</div>
-       <div className="absolute inset-0 z-10 bg-[url('/placeholder.svg?height=800&width=1600')] bg-cover bg-center opacity-20"></div>
+        <div
+          style={{
+            position: 'relative',
+            overflow: 'hidden',
+            height: '600px', // 👈 Fixed height taake ballpit poora dikh sake
+            width: '100%',
+            paddingTop: '50px', // Text ko neeche se start karaya
+            paddingLeft: '20px',
+            paddingRight: '20px',
+          }}
+        >
+          <div style={{ position: 'relative', zIndex: 2 }}>
+            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white text-center transition-all duration-300 hover:text-green-600">
+              About Us
+            </h1>
+            <p className="text-xl text-center text-gray-300 mb-8">
+              We're a team of passionate developers, designers, and strategists building exceptional software solutions.
+            </p>
+          </div>
+
+          {/* Ballpit background mein chalega */}
+          <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
+            <Ballpit
+              count={100}
+              gravity={1.7}
+              friction={1.8}
+              wallBounce={1}
+              followCursor={true}
+            />
+          </div>
+        </div>
+        <div className="absolute inset-0 z-10 bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
         <div className="container relative z-30 mx-auto px-4">
           {/* <div className="mx-auto max-w-[800px] text-center">
@@ -75,7 +75,7 @@ import Ballpit from "@/components/Ballpit"
               <h3 className="text-3xl md:text-4xl font-bold">From Humble Beginnings to Industry Leaders</h3>
             </div>
             <p className="text-gray-600 dark:text-gray-400">
-              Founded in 2020, Your Software House started with a dream in a small office. Passion, innovation, and relentless commitment helped us become trusted technology partners for businesses worldwide.
+              Founded in 2020, InterNative Tech started with a dream in a small office. Passion, innovation, and relentless commitment helped us become trusted technology partners for businesses worldwide.
             </p>
             <p className="text-gray-600 dark:text-gray-400">
               Today, a talented team of 30+ professionals powers cutting-edge digital experiences, building lasting partnerships along the way.

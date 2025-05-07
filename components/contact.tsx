@@ -55,7 +55,7 @@ export default function Contact() {
     <div className="bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-black py-20">
-        <div className="absolute inset-0 z-10 bg-[url('/placeholder.svg?height=800&width=1600')] bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 z-10  bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
         {/* <div className="container relative z-30 mx-auto px-4">
           <div className="mx-auto max-w-[800px] text-center">

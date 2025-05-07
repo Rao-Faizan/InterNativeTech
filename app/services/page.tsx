@@ -1,7 +1,7 @@
 import { Services } from "@/components/services"
 
 export const metadata = {
-  title: "Services | Your Software House",
+  title: "Services | InterNative Tech",
 }
 
 export default function ServicesPage() {

@@ -9,20 +9,23 @@ export function Testimonials() {
       role: "CEO, TechStart",
       content: "Working with the team was an outstanding experience! They understood my vision for PrepDummy.com perfectly and brought it to life with a clean, responsive, and user-friendly design. Their attention to detail, creativity, and professionalism made the entire process smooth and stress-free. Highly recommended!",
       rating: 5,
+      image: 'p1.png'
     },
     {
       id: 2,
-      name: "Saad",
+      name: "Saad Sheikh",
       role: "Founder, GrowthApp",
       content: "I'm extremely impressed with the AIT website developed for us! The design is modern, clean, and very easy to navigate. Every detail was handled professionally, and the project was completed exactly as we envisioned. It has truly elevated our IT center's online presence. Highly recommended!",
       rating: 5,
+      image: 'p2.png'
     },
     {
       id: 3,
       name: "William Hugh Jefferson",
       role: "Marketing Director, EcoSolutions",
       content: "Working with Engineered Solutions was a fantastic experience. Their team delivered an exceptional Rainwater Harvesting website that perfectly showcases our services. The design is clean, user-friendly, and highly professional.",
-      rating: 4,
+      rating: 5,
+      image: 'p3.png'
     },
   ]
 
@@ -68,7 +71,7 @@ export function Testimonials() {
                   <div className="h-14 w-14 overflow-hidden rounded-full bg-gradient-to-r from-green-400 to-green-600 p-0.5">
                     <div className="h-full w-full rounded-full bg-white dark:bg-gray-800 overflow-hidden">
                       <Image
-                        src={`/placeholder.svg?height=56&width=56&text=${testimonial.name.charAt(0)}`}
+                        src={testimonial.image}
                         alt={testimonial.name}
                         width={56}
                         height={56}

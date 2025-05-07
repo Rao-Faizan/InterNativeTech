@@ -3,7 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 export const metadata = {
-  title: "Insights & News | Your Software House",
+  title: "Insights & News | InterNative Tech",
   description: "Latest insights, tutorials, and news from our technology experts",
 }
 

@@ -2,8 +2,8 @@
 import { About } from "@/components/about"
 
 export const metadata = {
-  title: "About Us | Your Software House",
-  description: "Learn about our company, mission, values, and the team behind Your Software House",
+  title: "About Us | InterNative Tech",
+  description: "Learn about our company, mission, values, and the team behind InterNative Tech",
 
 }
 
