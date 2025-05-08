@@ -6,7 +6,7 @@ export function Testimonials() {
     {
       id: 1,
       name: "Arsalan",
-      role: "CEO, TechStart",
+      role: "Founder, prepdummy",
       content: "Working with the team was an outstanding experience! They understood my vision for PrepDummy.com perfectly and brought it to life with a clean, responsive, and user-friendly design. Their attention to detail, creativity, and professionalism made the entire process smooth and stress-free. Highly recommended!",
       rating: 5,
       image: 'p1.png'
@@ -14,7 +14,7 @@ export function Testimonials() {
     {
       id: 2,
       name: "Saad Sheikh",
-      role: "Founder, GrowthApp",
+      role: "COO, Idara Al-Khair",
       content: "I'm extremely impressed with the AIT website developed for us! The design is modern, clean, and very easy to navigate. Every detail was handled professionally, and the project was completed exactly as we envisioned. It has truly elevated our IT center's online presence. Highly recommended!",
       rating: 5,
       image: 'p2.png'
@@ -22,7 +22,7 @@ export function Testimonials() {
     {
       id: 3,
       name: "William Hugh Jefferson",
-      role: "Marketing Director, EcoSolutions",
+      role: "Co-Founder, Engineered Solutions",
       content: "Working with Engineered Solutions was a fantastic experience. Their team delivered an exceptional Rainwater Harvesting website that perfectly showcases our services. The design is clean, user-friendly, and highly professional.",
       rating: 5,
       image: 'p3.png'

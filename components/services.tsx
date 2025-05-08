@@ -1,6 +1,6 @@
 "use client"
 
-import { FaDesktop, FaMobileAlt, FaChartBar, FaCode, FaDatabase, FaCloud, FaPalette, FaShieldAlt } from "react-icons/fa"
+import { FaMobileAlt, FaChartBar, FaCode, FaDatabase, FaCloud, FaPalette, FaShieldAlt, FaBook, FaGlobe, FaMagic, FaPencilRuler, FaSearch } from "react-icons/fa"
 import Ballpit from "./Ballpit"
 
 export function Services() {
@@ -40,7 +40,32 @@ export function Services() {
       title: "IT Consulting",
       description: "Expert advice to align technology with your business goals.",
     },
-  ]
+    {
+      icon: <FaPencilRuler className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
+      title: "Logo Design",
+      description: "Unique and memorable logos that reflect your brand identity.",
+    },
+    {
+      icon: <FaGlobe className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
+      title: "Website Development",
+      description: "Responsive and modern websites tailored to your business objectives.",
+    },
+    {
+      icon: <FaBook className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
+      title: "eBook Publishing",
+      description: "Professional formatting and publishing services for digital books.",
+    },
+    {
+      icon: <FaMagic className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
+      title: "Logo Animation",
+      description: "Animated logo intros that bring your brand to life.",
+    },
+    {
+      icon: <FaSearch className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
+      title: "SEO Services",
+      description: "Improve your visibility with keyword optimization and analytics-driven SEO.",
+    },
+  ];
 
   return (
     <section className="relative overflow-hidden py-16 bg-white dark:bg-gray-900">

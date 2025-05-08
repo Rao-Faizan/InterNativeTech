@@ -23,7 +23,7 @@ export default function Home() {
         <div className="relative z-30 flex items-center justify-center h-full">
           <div className="text-center px-4 max-w-2xl">
             <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl text-green-300 dark:text-green-400">
-              WELCOME TO INTERNATIVE TECH
+              Welcome to InterNative Tech
             </h1>
 
             <p className="mt-4 text-gray-300 md:text-lg">
