@@ -1,7 +1,7 @@
 "use client"
 
 import { FaDesktop, FaMobileAlt, FaChartBar, FaCode, FaDatabase, FaCloud, FaPalette, FaShieldAlt } from "react-icons/fa"
-import Ballpit from "./Ballpit"
+import Ballpit from "@/components/Ballpit"
 
 export function Services() {
   const services = [
@@ -45,7 +45,7 @@ export function Services() {
   return (
     <section className="relative overflow-hidden py-16 bg-white dark:bg-gray-900">
       <div className="relative overflow-hidden bg-black py-20">
-        <div className="absolute inset-0 z-10  bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 z-10 bg-[url('/placeholder.svg?height=800&width=1600')] bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
         <div
   style={{

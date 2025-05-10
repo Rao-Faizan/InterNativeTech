@@ -8,54 +8,44 @@ export function About() {
 
   return (
     <div className="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-black py-20">
+    {/* Hero Section */}
+    <section className="relative overflow-hidden bg-black w-full min-h-[600px] flex flex-col justify-center items-center text-center">
+      
+      {/* Text Content */}
+      <div className="relative z-20 px-4 md:px-8">
+        <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
+          About Us
+        </h1>
+        <p className="text-xl text-gray-300 mb-8">
+          We're a team of passionate developers, designers, and strategists building exceptional software solutions.
+        </p>
+      </div>
+  
+      {/* Ballpit Background */}
+      <div className="absolute inset-0 z-10 opacity-30">
+        <Ballpit 
+          className="coding-ballpit"
+          count={100}
+          // gravity={0.8}
+          friction={1.0}
+          // spin={1}
+          // wallBounce={1}
 
-
-        <div
-          style={{
-            position: 'relative',
-            overflow: 'hidden',
-            height: '600px', // 👈 Fixed height taake ballpit poora dikh sake
-            width: '100%',
-            paddingTop: '50px', // Text ko neeche se start karaya
-            paddingLeft: '20px',
-            paddingRight: '20px',
-          }}
-        >
-          <div style={{ position: 'relative', zIndex: 2 }}>
-            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white text-center transition-all duration-300 hover:text-green-600">
-              About Us
-            </h1>
-            <p className="text-xl text-center text-gray-300 mb-8">
-              We're a team of passionate developers, designers, and strategists building exceptional software solutions.
-            </p>
-          </div>
-
-          {/* Ballpit background mein chalega */}
-          <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
-            <Ballpit
-              count={100}
-              gravity={1.7}
-              friction={1.8}
-              wallBounce={1}
-              followCursor={true}
-            />
-          </div>
-        </div>
-        <div className="absolute inset-0 z-10 bg-cover bg-center opacity-20"></div>
-        <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
-        <div className="container relative z-30 mx-auto px-4">
-          {/* <div className="mx-auto max-w-[800px] text-center">
-            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
-              About Us</h1>
-            <p className="text-xl text-gray-300">
-              We're a team of passionate developers, designers, and strategists building exceptional software solutions.
-            </p>
-          </div> */}
-        </div>
-
-      </section>
+          followCursor={true}
+          colors={[
+            0xe34f26, // HTML
+            0x1572b6, // CSS
+            0xf7df1e, // JS
+            0x3178c6, // TS
+            0x61dafb, // React
+          ]}
+          ballSize={{ min: 0.8, max: 1.8 }}
+        />
+      </div>
+  
+    </section>
+ 
+  
       {/* Our Story */}
       <section className="py-16 md:py-24">
         <div className="container mx-auto px-4 grid md:grid-cols-2 gap-12 items-center">

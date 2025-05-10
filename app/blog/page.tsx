@@ -90,50 +90,40 @@ export default function BlogPage() {
     <div className="bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 py-28">
-        <div className="absolute inset-0 z-10 opacity-20">
-          <div className="absolute inset-0 bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80"></div>
-        </div>
-        {/* <div className="container relative z-30 mx-auto px-4">
-          <div className="mx-auto max-w-[800px] text-center">
-            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
-              Our Blog</h1>
-            <p className="text-xl text-gray-300">
-              Insights, tutorials, and news from our technology experts.</p>
-          </div>
-        </div> */}
-        <div
-  style={{
-    position: 'relative',
-    overflow: 'hidden',
-    height: '600px', // 👈 Fixed height taake ballpit poora dikh sake
-    width: '100%',
-    paddingTop: '50px', // Text ko neeche se start karaya
-    paddingLeft: '20px',
-    paddingRight: '20px',
-  }}
->
-  <div style={{ position: 'relative', zIndex: 2 }}>
-    <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white text-center transition-all duration-300 hover:text-green-600">
-    Our Blog
-    </h1>
-    <p className="text-xl text-center text-gray-300 mb-8">
-    Insights, tutorials, and news from our technology experts.    </p>
+  {/* Background Grid + Gradient */}
+  <div className="absolute inset-0 z-10 opacity-20">
+    <div className="w-full h-full bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
+    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80"></div>
   </div>
 
-  {/* Ballpit background mein chalega */}
-  <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
-    <Ballpit
-      count={100}
-      gravity={1.7}
-      friction={1.8}
-      wallBounce={1}
-      followCursor={true}
+  {/* Ballpit Layer */}
+  <div className="absolute inset-0 z-20 opacity-30">
+    <Ballpit 
+      className="coding-ballpit"
+      count={150}
+      colors={[
+        0xe34f26, // HTML
+        0x1572b6, // CSS
+        0xf7df1e, // JS
+        0x3178c6, // TS
+        0x61dafb, // React
+      ]}
+      ballSize={{ min: 0.6, max: 1.8 }}
+      iconUrls={[]}
     />
   </div>
-</div>
 
-      </section>
+  {/* Content */}
+  <div className="relative z-30 flex flex-col justify-center items-center text-center px-6 md:px-12 min-h-[600px]">
+    <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
+      Our Blog
+    </h1>
+    <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
+      Insights, tutorials, and news from our technology experts.
+    </p>
+  </div>
+</section>
+
 
 
       {/* Blog Content */}

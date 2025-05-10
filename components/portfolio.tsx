@@ -75,6 +75,7 @@ export function Portfolio() {
     <div className="bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-black py-20">
+<<<<<<< Updated upstream
         <div className="absolute inset-0 z-10  bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
         <div
@@ -96,32 +97,43 @@ export function Portfolio() {
     <p className="text-xl text-center text-gray-300 mb-8">
     Creativity involves breaking out of expected & repeatable patterns to look at things differently than ever before.
     </p>
+=======
+  {/* Background Image & Gradient Layer */}
+  <div className="absolute inset-0 z-10">
+    <div className="w-full h-full bg-[url('/placeholder.svg?height=800&width=1600')] bg-cover bg-center opacity-20"></div>
+    <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/40"></div>
+>>>>>>> Stashed changes
   </div>
 
-  {/* Ballpit background mein chalega */}
-  <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
-    <Ballpit
+  {/* Ballpit Layer */}
+  <div className="absolute inset-0 z-20 opacity-30">
+    <Ballpit 
+      className="coding-ballpit"
       count={100}
-      gravity={1.7}
-      friction={1.8}
-      wallBounce={1}
       followCursor={true}
+      friction={1.0}
+      colors={[
+        0xe34f26, // HTML
+        0x1572b6, // CSS
+        0xf7df1e, // JS
+        0x3178c6, // TS
+        0x61dafb, // React
+      ]}
+      ballSize={{ min: 0.8, max: 1.8 }}
     />
   </div>
-</div>
 
-        {/* <div className="container relative z-30 mx-auto px-4">
-          <div className="mx-auto max-w-2xl text-center animate-fadeInUp">
-            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
-              AMAZING WORKS
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 leading-relaxed">
-              Creativity involves breaking out of expected & repeatable patterns to look at things differently than ever before.
-            </p>
-          </div> */}
-        {/* </div> */}
+  {/* Content Layer */}
+  <div className="relative z-30 flex flex-col justify-center items-center text-center px-6 md:px-12 min-h-[600px]">
+    <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
+      AMAZING WORKS
+    </h1>
+    <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
+      Creativity involves breaking out of expected & repeatable patterns to look at things differently than ever before.
+    </p>
+  </div>
+</section>
 
-      </section>
 
       {/* Portfolio Grid */}
       <section className="py-16 md:py-24">

@@ -55,7 +55,7 @@ export default function Contact() {
     <div className="bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-black py-20">
-        <div className="absolute inset-0 z-10  bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 z-10 bg-[url('/placeholder.svg?height=800&width=1600')] bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
         {/* <div className="container relative z-30 mx-auto px-4">
           <div className="mx-auto max-w-[800px] text-center">
@@ -87,19 +87,35 @@ export default function Contact() {
     </p>
   </div>
 
-  {/* Ballpit background mein chalega */}
-  <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
-    <Ballpit
+  {/* Ballpit Layer */}
+  <div className="absolute inset-0 z-20 opacity-30">
+    <Ballpit 
+      className="coding-ballpit"
       count={100}
-      gravity={1.7}
-      friction={1.8}
-      wallBounce={1}
       followCursor={true}
+      friction={1.0}
+      colors={[
+        0xe34f26, // HTML
+        0x1572b6, // CSS
+        0xf7df1e, // JS
+        0x3178c6, // TS
+        0x61dafb, // React
+      ]}
+      ballSize={{ min: 0.8, max: 1.8 }}
     />
   </div>
-</div>
 
-      </section>
+  {/* Content */}
+  <div className="relative z-30 flex flex-col justify-center items-center text-center px-6 md:px-12 min-h-[600px]">
+    <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
+      Contact Us
+    </h1>
+    <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
+      Get in touch with our team to discuss your project or inquire about our services.
+    </p>
+  </div>
+</section>
+
 
       {/* Contact Information */}
       <section className="py-16 md:py-24 dark:bg-gray-900">
