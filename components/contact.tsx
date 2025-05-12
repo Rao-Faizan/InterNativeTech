@@ -21,55 +21,90 @@ export default function Contact() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [formStatus, setFormStatus] = useState<string | null>(null);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData((prev) => ({ ...prev, [name]: value }));
-  };
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target
+    setFormData((prev) => ({ ...prev, [name]: value }))
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     setFormStatus(null);
+
+    try {
+      const response = await fetch("/send-email.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setFormStatus("Thanks! Your message has been sent.");
+        setFormData({ name: "", email: "", phone: "", subject: "", message: "" });
+      } else {
+        setFormStatus("Something went wrong. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Send failed:", error);
+      setFormStatus("Sending failed.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
+
+
 
   return (
     <div className="bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-black ">
-         <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
-         
-        
+      <section className="relative overflow-hidden bg-black py-20">
+        <div className="absolute inset-0 z-10  bg-cover bg-center opacity-20"></div>
+        <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
+        {/* <div className="container relative z-30 mx-auto px-4">
+          <div className="mx-auto max-w-[800px] text-center">
+            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
+              Contact Us
+            </h1>
+            <p className="text-xl text-gray-300">
+              Get in touch with our team to discuss your project or inquire about our services.
+            </p>
+          </div> */}
+        {/* </div> */}
+        <div
+          style={{
+            position: 'relative',
+            overflow: 'hidden',
+            height: '600px', // 👈 Fixed height taake ballpit poora dikh sake
+            width: '100%',
+            paddingTop: '50px', // Text ko neeche se start karaya
+            paddingLeft: '20px',
+            paddingRight: '20px',
+          }}
+        >
+          <div style={{ position: 'relative', zIndex: 2 }}>
+            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white text-center transition-all duration-300 hover:text-green-600">
+              Contact Us
+            </h1>
+            <p className="text-xl text-center text-gray-300 mb-8">
+              Get in touch with our team to discuss your project or inquire about our services.
+            </p>
+          </div>
 
-        {/* Ballpit Layer */}
-        <div className="absolute inset-0 z-20 opacity-30">
-          <Ballpit
-            className="coding-ballpit"
-            count={100}
-            followCursor={true}
-            friction={1.0}
-            colors={[
-              0x1C1917, // HTML
-              0x01b7c5, // CSS
-              0xffffff, // JS
-              0x7a7d7d, // TS
-              0x01b7c5, // React
-              
-            ]}
-            ballSize={{ min: 0.8, max: 1.8 }}
-          />
+          {/* Ballpit background mein chalega */}
+          <div style={{ position: 'absolute', inset: 0, zIndex: 1 }}>
+            <Ballpit
+              count={100}
+              gravity={1.7}
+              friction={1.8}
+              wallBounce={1}
+              followCursor={true}
+            />
+          </div>
         </div>
 
-        {/* Content */}
-        <div className="relative z-30 flex flex-col justify-center items-center text-center px-6 md:px-12 min-h-[600px]">
-          <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
-            Contact Us
-          </h1>
-          <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
-            Get in touch with our team to discuss your project or inquire about
-            our services.
-          </p>
-        </div>
       </section>
 
       {/* Contact Information */}
@@ -78,28 +113,10 @@ export default function Contact() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {/* Reusable contact info component */}
             {[
-              {
-                icon: FaMapMarkerAlt,
-                title: "Our Location",
-                content:
-                  "123 Tech Street, Innovation District, City, Country 12345",
-              },
-              {
-                icon: FaPhoneAlt,
-                title: "Phone Number",
-                content: "+1 (123) 456-7890\n+1 (987) 654-3210",
-              },
-              {
-                icon: FaEnvelope,
-                title: "Email Address",
-                content:
-                  "info@yoursoftwarehouse.com\nsupport@yoursoftwarehouse.com",
-              },
-              {
-                icon: FaClock,
-                title: "Working Hours",
-                content: "Monday - Friday: 9am - 6pm\nSaturday: 10am - 2pm",
-              },
+              { icon: FaMapMarkerAlt, title: "Our Location", content: "InterNative Tech .LLC 1500 HORNELL LOOP 9C BROOKLYN,NY 11239" },
+              { icon: FaPhoneAlt, title: "Phone Number", content: `+1 212 3461647 \n +44 757 7326014` },
+              { icon: FaEnvelope, title: "Email Address", content: "info@internativetech.com\nsupport@internativetech.com" },
+              { icon: FaClock, title: "Working Hours", content: "Monday - Friday: 9am - 6pm\nSaturday: 10am - 2pm" },
             ].map(({ icon: Icon, title, content }, index) => (
               <div
                 key={index}
@@ -248,10 +265,14 @@ export default function Contact() {
               </form>
 
               {formStatus && (
-                <div className="mt-6 text-center text-green-600 dark:text-green-500">
-                  <p>{formStatus}</p>
+                <div
+                  className={`mt-4 text-center text-sm font-medium ${formStatus.includes("thanks") ? "text-green-600" : "text-red-600"
+                    }`}
+                >
+                  {formStatus}
                 </div>
               )}
+
             </div>
           </div>
         </div>

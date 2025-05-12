@@ -126,10 +126,10 @@ export function About() {
 
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {[
-              { name: "Abdul Mateen", role: "CEO & Founder" },
-              { name: "Faizan Rao", role: "CTO" },
-              { name: "Syed Mudassir Ali", role: "Lead Developer" },
+              { name: "Abo ul Hassan Babar", role: "CEO & Co-Founder" },
+              { name: "Abdul Mateen", role: "CTO & Co-Founder" },
               { name: "Ubaid Qureshi", role: "UX/UI Designer" },
+              { name: "Rao Faizan", role: "Lead Developer" },
             ].map((member, idx) => (
               <div
                 key={idx}
