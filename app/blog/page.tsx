@@ -89,11 +89,11 @@ export default function BlogPage() {
   return (
     <div className="bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-gray-900 to-gray-800 py-28">
+      <section className="relative overflow-hidden bg-black ">
   {/* Background Grid + Gradient */}
   <div className="absolute inset-0 z-10 opacity-20">
-    <div className="w-full h-full bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div>
-    <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80"></div>
+    {/* <div className="w-full h-full bg-[url('/grid.svg')] bg-center [mask-image:linear-gradient(180deg,white,rgba(255,255,255,0))]"></div> */}
+    {/* <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80"></div> */}
   </div>
 
   {/* Ballpit Layer */}
@@ -102,11 +102,11 @@ export default function BlogPage() {
       className="coding-ballpit"
       count={150}
       colors={[
-        0xe34f26, // HTML
-        0x1572b6, // CSS
-        0xf7df1e, // JS
-        0x3178c6, // TS
-        0x61dafb, // React
+        0x1C1917, // HTML
+        0x01b7c5, // CSS
+        0xffffff, // JS
+        0x7a7d7d, // TS
+        0x01b7c5, // React
       ]}
       ballSize={{ min: 0.6, max: 1.8 }}
       iconUrls={[]}

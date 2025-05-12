@@ -12,7 +12,7 @@ export function About() {
     <section className="relative overflow-hidden bg-black w-full min-h-[600px] flex flex-col justify-center items-center text-center">
       
       {/* Text Content */}
-      <div className="relative z-20 px-4 md:px-8">
+      <div className="relative z-20 px-2 md:px-8">
         <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
           About Us
         </h1>
@@ -25,7 +25,7 @@ export function About() {
       <div className="absolute inset-0 z-10 opacity-30">
         <Ballpit 
           className="coding-ballpit"
-          count={100}
+          count={150}
           // gravity={0.8}
           friction={1.0}
           // spin={1}
@@ -33,11 +33,11 @@ export function About() {
 
           followCursor={true}
           colors={[
-            0xe34f26, // HTML
-            0x1572b6, // CSS
-            0xf7df1e, // JS
-            0x3178c6, // TS
-            0x61dafb, // React
+            0x1C1917, // HTML
+            0x01b7c5, // CSS
+            0xffffff, // JS
+            0x7a7d7d, // TS
+            0x01b7c5, // React
           ]}
           ballSize={{ min: 0.8, max: 1.8 }}
         />

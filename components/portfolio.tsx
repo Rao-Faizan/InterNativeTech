@@ -1,7 +1,8 @@
 "use Client"
 import Image from "next/image"
 import Link from "next/link"
-import Ballpit from "./Ballpit";
+import Ballpit from "@/components/Ballpit";
+import { link } from "fs";
 
 export function Portfolio() {
   const projects = [
@@ -11,6 +12,7 @@ export function Portfolio() {
       category: "web",
       image: "https://plus.unsplash.com/premium_photo-1681488350342-19084ba8e224?q=80&w=1988&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description: "A comprehensive e-commerce solution with advanced features and seamless user experience.",
+      link:"http://sharkeyfamilyrealtor.com/ "
     },
     {
       id: 2,
@@ -64,60 +66,76 @@ export function Portfolio() {
     },
     {
       id: 9,
-      title: "Brand Identity Design",
+      title: "ToyWiz ",
       category: "design",
       image: "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwgHBgkIBwgKCgkLDRYPDQwMDRsUFRAWIB0iIiAdHx8kKDQsJCYxJx8fLT0tMTU3Ojo6Iys/RD84QzQ5OjcBCgoKDQwNGg8PGjclHyU3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3Nzc3N//AABEIAJQBCwMBIgACEQEDEQH/xAAbAAEAAgMBAQAAAAAAAAAAAAAABAUBAwYCB//EAEYQAAEDAwAECQgHBgUFAAAAAAEAAgMEBREGEiExBxMUFUFRcYGRIiMyUlNhkqEzYnKisdHhNEJDVGPBFkSTo7IXJWRzg//EABkBAQEBAQEBAAAAAAAAAAAAAAABAgMEBf/EACURAQACAQQBAwUBAAAAAAAAAAABEQIDEiExBDJBUQUTIlKhFP/aAAwDAQACEQMRAD8A+qoiLyugiIgIiyNqDCIncUBEWUGERMoCIiAiLKDCIiAiIgIiICIiAiIqCIiAiIgIiKAiIgIiICIioLZFE6V2G9G89S9QQOlPU3pKnxsDG6rRgD5rURaWjCiGPTKzyJvrFSkV2lo3I2+sU5Ez1nKSitQWj8jZ6xTkbOkuKkIlQiPySP63inJI/reKkIlQNHJIvf4pySLqPit6JUDRySLqPis8li9X5rciVA08li9X5rIpoh+4D2raiVA1cni9mE5PF6gW1EqBr5PF6gTiIvZtWxFageOJj9RvgnEs9RvgvaJwPHFM9Rvgs8Wz2bPBekQeRGwfuNHchY31W+C9IUFbUjE7gPd+C1LdVfTu7vwWlcp7aERFAREQF7iwZGh24kBeFlv0kf22/iqLVow0AbB1BZWVhdWRERAREQEQ7lAu16ttmbE661sNI2U6rHSuwHHqCCei59mm+jD3hjb3Ra2emTGVfRSNljbJG5rmOGWuacghWi3pERQsREQsREQsRclp9pk/RGKldHbm1hqNfY6fi9XVx9U53ppbptFo1brfVSUTqh9YAQwShjWjAJ8ojaduwYGfcrRbrUUe31bK+gpqyNr2MqImyta8YcA4ZwR1qQoWIiIWIiICwVlEFdV/tDu78FpW+rHn3d34LQuU9tCIigIiICwTh8X/ALG/isrXO8R8W9xwGyNJ8UuhdrKrhd6b63c1Dd6X6/wrP+rR/aF+1n8LBFXc70/qyeC9QXOKaVsbWvy7dnGEjytGZqMlnTziLpPREXocwr5nw3D/ALfaj08e/Hwr6YV824bwOarY7/ynDZ9gqwkuVu0ehLdFonULnm9mGPIZJI7zmBrawPk43rt9DH1+jPBxJV18Be6EPnhgc/VxHswM4OOk965Oeq0E/wAHwsNLGbzyNgLoYnB/HagyS7GN+VL0MkrZeDTSFtS+R9M1p4guyRuy7VJ6Ny3PIn0vCnWV4p4qKwF1S+YNla2V0jY4yQNbIaNu078AY3q2v2l9/gvNRbLHozNUugwXTzE6rwRsLQNmO/PuUHgTZHzLXvAHGGoALunGqMBULr/VX7SS4Ut60klsVFBI9sccfkei4tDc9eBkk9ylDs9CNNpNIKypt1xoxR19OCSxpJDgDg7DtBHUqSThKuQvtda4LNHUSxTSwwMie4ue5riBn3YGSqHg5dD/ANSJDS1M1TAY5gyeb05R5PlHt3qVofhvC5cR1TVX/JKgXmimn9xrdIhZL/b4aaoeS1hiDmljwM6rmknOzp+S26ZaeVVuvQsdgpGVNe3VEjntLgHOGQxrQRk4IPYQucvGI+GyI52mohP+w0LzpBPLojwoSXisp3y0c79eNw6WuYAcfWaQdnV2pUCr4Qbve6+no6XSO28kqoddzZGghsrSAN23aMdB6V2mnF/qLJotYpKWmo6jjmsBFVFxgGI8gjaFyXCVpdR6Sw0jLfFK2mpnEunlbq+WRgNHdlWvCc9o0G0XeXAawj3n+insL/S/S652bRaxXGhbTieu1BIHxktGYi7YM7NoVBcdNNNRbKa9xU0FLa3hrWuMQdxh3axycgE7sY796xwgnX4OdE353GE/7DgrK7jW4Erb04oKT5BqcC7Gm8Q0Cj0kkgAmkBjEAOzjQ4sIzvxkHuXMWm+8IVfSG+QRwT0G13EFjGh7Rv1R6WNh25Wu02apvfBBHT0jNephqpZWR9LsSOOB3FeNGtOq+2WSKwiyVM9xgaYoC0FoxnZrtxkYz346FRe8GOlN20hrbhHdJ2yNiY10bWxNbq5JB2jevoK+ScCpdzxdtf0zC0u9x1l9bWJWBERQV9Z+0HsWhb639oPYtC5T20IiKACHeiQewrKqTQOk3UFHF7y5x+QWOZy70jA37Mbj+Ll5/u6k9YuuzH5W+ColykYyDVe9rTrDYThQ+Y2n0ql2OpsbR81FqbQ+lfx0colb6OrLvXPV1dbb6P61hhhfqbmyROAxI09jgprYoYII5avjHueMtijG0j3lVLqeVwOYaTdu1SVd22jMcHGsEXlgZbDHq6pHXtK+Z4GGOerMZxb0+RlOOPEtTWU1TG91HrslYCXRv25HuWLb+3Q9v9lNbCKefljhqNYwjbs1ioVu/boO3+y9PkaWnp6+G3iXLTyyywyiXSoiL7jxQFV15sdtvkMcN2pW1EcTtdjXEjBxjOwjoVivMsrIYy+Rwa0DaSl1yOeZoJosxwcLLTuI3B5c4eBKun0NK+idQmmj5K5moYQ3DS3qwkFfTzSBjH+URkAgjI9y21E8dNTyVEztWKNhe92NwG0qY5xl0TFItqtFus8T4bXRxUsb3azmxDAJ3ZUav0YsdyqeVV9ppJ5+mR8Yy7t6+9e7LpDa74Jja6ps4hxrkAjGdytMrXJSvp7LaqWtNbT22liqjsM7Imh+MAYyNvQvcNpt0FY6sgoKdlS8kumbEA8k7yTvVBJptTM0z/w1yGo47jRHyjWbqbY9frz7l1mUlER9roJKsVclHTvqdnnjENfZsG3fuW2spKatiMVZTxTxn92RgcPmt2UypytIkdroIadtPFQ0rYWnIjbE0NB68YW51PC9jWPhjcxuxrS3IHYtuVoqq6komtdWVUMAdsaZZA3PZlXlHowROa1jomFrNzC0EDsC9FjCwMLWagHo6owqzSO8xWWxVF11DURxMDg1hHlZ3HPQPeoeiOlMGkVgfdZIRSRxSujk1nZYNUAkh3SNvyKVIn3+K5GzVMVh4qOtc3ETn7A339vUvn0lbwmGnNG62QF7m6jqoQt4w9Gc62O/VX0uhuNFcI3SUFTFUMa7Vc6J2sAepSNmdu9W6HHcHGiU+jVJPLXua6tqsa4YciNo3DPScnJ7l2SZTIUmbWBERQQK36c9ijqRXfT9rQo65z20IiLIIiICi3HbA0D1x0KUo1ecMiOzZK0qZRcUscTaLyefb5mTt1StkMdXEcwsmZ7wCumxtTC8UfTMYm4ymHafKmeKc1JFWzHMrJn9oWyhpp21kTnQuDQdpwuhwsYWsfp2MZxlOUpPkTVUyiIvpPPAoF4YXUmvsIje15adxA6FPVZWtbLdKaKcAxapcAdznLlrT+Ew1j28CQXGeB9O3EUL9Z0juvG4LbfHMlstzaHAkUsocB0HUK03BpoJRUUmA+Q6phH7/vA61rLYjo1WmN2u59PKZHHeXapzlcdHKcc9k9tZxcW4bgPfiO7Bztg4skk+4qRWcJlfV3SSm0aspr4oyfLJcXP94AB1R1Eqt4H4X1dHf6WMgOmpwxruokOH91F4NdI6DRae50V6Y+nkc8Av1Mlrm5Ba7pXvnuXJGtl0F34V6S4ugkp3y1DQ6GTexzYtQg97V3ul2mk9tusVksVDy66SAEtJ8lmdoHvONvYuDgu1PeeFWkuVFGWU8tU0MJbgv1WFusfeSCs6c0XNnCFPVXOarp6GteJGVNMcOxqNaQD0kEbR1JxY66i01vNtvlPa9MLdDS8qwIZ4c4ydnWdmSBvWNN9PK7RvSiO3QUcM1MaeKZ+QS86znjAwd/kbO1crBRaKV97o6GO83uslkcBFK9peGu2YG3b0Zz7lI4TQ1vCRaCcZMdGNpG3z7lOBMq+ELSez3SI3+0wUtFL5bYdTD+LzgkPDiCR1EBROGKe5z1UDKmnjFoa4OpJgPKe4sy7O3o29AUvh31eLtWSBls4BJ+ypPC1BJNofZ6hjdaKJ7TI4D0Q6PAPjs70+BJt930no9CLjW3Okoo2U1JEaDzes17MY8saxzsx1KBDe9Ib5weVM1JFQ+bqZIKlscWo1sAjDvJGfSy79FvGktBe+DK5UtOXslobdGyfXxjOANh6R5K88FjRXcHt6gpXNkdJUTNbqkHaYY8JYqOC3/EjteKzup47Yagcqe8AvaSzYRnsC6LQbS6712ktXZNIJI+OYHNYGxhmHsO0d4XP8FGklPZ62Sw1cTxVVlS0MGQCxwbtDhv6FK4U6GayaRUektvPFum8l7m9EoBAPe3/ir7i1sOk16vun1VRU1U1top3vJaImkljfJHlYztP4r6MFwHA7ajTWGa5yt87XSnVJ9m0kDxdrHwXfrErAiIoINd9OPsj+6jKTXfTN+yoy5z20IiLIIiICiXE4ij+2FMUK6bImfbRYdH1onSUXaGBERAREQFqqKaGpj1J4w9u8A9C2opMRMVKo0FBTU7y+KPDz+8SSfmvfJKfzvmm+eGrJ9Ybtq3IpGGMdQTMyr7XY7XaDIbZQw0xkwH8W3Gtha7lo5ZbrUCpuFspp5x/EczyiOokb+9WiLdor22K0NqYaltsoxPA0NikEDdaNozgA42AZKk1lFS10DoK2mhqInb2SsDh4Fb0UsQLbY7Ta3OdbbbS0z3bC6KIBx7963zUFHUTNmnpIJZW41XvjDnDByME7d6kIg1T0tPUkcogil1d3GMDseK9mNjmGNzGlhGNUjZjsXpEGmGkpqdjmQU8MbXek1kYaHduFtDWtGGgAZzsCyiDzxbNfXLG6x3uwM+K+S3u0ab6X3FlJcqJtLQQzOMcnktaG5xrEaxLnY7O5fXEViUlHt9HDb6GnoqdurDTxtjYPcBhSEAA6EUWBERBBrvpW/ZUZSq/6Vv2VFXOWhERZBERAUavifLCNTe05wpKz0oFtu3GEQ1fkSbtbod+qth71z1ZRtnBLcNk6wdhShuklG4QVoc5nX0tWoyrgmHQovLJGPYHMe0tO4grOs31h4rdssovPGM9dviscbH7Rnilwr2i8GaIb5WfEF5NRB0zR/EEuBtRaTU0w3zxfGE5ZSj/MxfGEuBuRRzW0v8zD8YWOX0f8zH8YS4ElFF5wov5qL4ljnKh/mYvFLgS0UM3OiH+ZZ3ArHOtD/MA9xS4E1FB52oR/H+4Vjneh9sT/APN35KboE9FA55oR/FP+m78l555ovaO+Aq7oKWKKt57ofWk+ArHPdH/V+BN0JUrNFVm+Unqy/CPzWDfaX1JvhH5pugqVqiqefaX2cx7h+ac+02QOKl78fmm6CpSa/wCkZ2KMttRM2YtLWkbOlaVzloREUBERAREQFqnp45xh7dvQ4bCFtRBC5tj9o9YNsj9o/wCSnIlLaCbYz2jvALHNbfanwU9EotX81t9r91Oa/wCt91WCKUWruaz7YfD+qc2H2o+H9VYolFq3mx3tW/D+qc2v9ozwVkiUWrObZPaM+axzbL7RnzVoibS1XzbL67Pmsc3TdcfeT+StUV2wWqjbp+uPx/RY5un+r8StkU2rap5vqOpvxJzfU+q34lbom0tT8hqPU+8E5DUez+8Fbom1LU/Ian2f3gsciqfZ/MK5RNpam5HUD+EVgUlRrDzRV0nQlFg3BERVBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREBERAREQEREH//Z",
-      description: "A complete brand identity package including logo, color scheme, and brand guidelines.",
+      description: "ToyWiz is a family-owned toy store offering a huge selection of action figures, trading cards, and collectibles.Find top brands like Pokémon, Minecraft, Marvel, Star Wars, and more — perfect for fans and collectors of all ages!",
+      link:"https://toywiz.com/"
     },
-  ]
+    {
+      id: 10,
+      title: "Brand Identity Design",
+      category: "design",
+      image: "/10.webp",
+      description: "American Powers Safety Consultants empowers individuals and teams through expert OSHA-certified training, advanced safety programs, and Red Cross courses. We specialize in creating safer workplaces with customized audits, inspections, and safety management solutions.",
+      link : "https://americanpsc.com/"
+    } ,
+//    
+{
+  id: 10,
+  title: "Brand Identity Design",
+  category: "design",
+  image: "/10.webp",
+  description: " Kennedy Wilson is a global real estate investment company with $29B in assets under management across multifamily, commercial, and debt investments. With over 36 years of experience, we deliver long-term value through smart asset management, development, and a strong commitment to ESG principles.",
+  link : "https://americanpsc.com/"
+} ,
+{
+  id: 10,
+  title: "Brand Identity Design",
+  category: "design",
+  image: "/10.webp",
+  description: "American Powers Safety Consultants empowers individuals and teams through expert OSHA-certified training, advanced safety programs, and Red Cross courses. We specialize in creating safer workplaces with customized audits, inspections, and safety management solutions.",
+  link : "https://americanpsc.com/"
+} 
+]
 
   return (
     <div className="bg-white dark:bg-gray-900">
       {/* Hero Section */}
       <section className="relative overflow-hidden bg-black py-20">
-<<<<<<< Updated upstream
+
         <div className="absolute inset-0 z-10  bg-cover bg-center opacity-20"></div>
         <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
         <div
   style={{
     position: 'relative',
     overflow: 'hidden',
-    height: '600px', // 👈 Fixed height taake ballpit poora dikh sake
+    height: '600px',
     width: '100%',
-    paddingTop: '50px', // Text ko neeche se start karaya
+    paddingTop: '50px',
     paddingLeft: '20px',
     paddingRight: '20px',
   }}
 >
-  <div style={{ position: 'relative', zIndex: 2 }}>
-    <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white text-center transition-all duration-300 hover:text-green-600">
-    AMAZING WORKS
-
-    </h1>
-    <p className="text-xl text-center text-gray-300 mb-8">
-    Creativity involves breaking out of expected & repeatable patterns to look at things differently than ever before.
-    </p>
-=======
   {/* Background Image & Gradient Layer */}
   <div className="absolute inset-0 z-10">
     <div className="w-full h-full bg-[url('/placeholder.svg?height=800&width=1600')] bg-cover bg-center opacity-20"></div>
     <div className="absolute inset-0 bg-gradient-to-b from-black/80 to-black/40"></div>
->>>>>>> Stashed changes
   </div>
 
   {/* Ballpit Layer */}
   <div className="absolute inset-0 z-20 opacity-30">
     <Ballpit 
       className="coding-ballpit"
-      count={100}
+      count={150}
       followCursor={true}
       friction={1.0}
       colors={[
-        0xe34f26, // HTML
-        0x1572b6, // CSS
-        0xf7df1e, // JS
-        0x3178c6, // TS
-        0x61dafb, // React
+        0x1C1917, // HTML
+        0x01b7c5, // CSS
+        0xffffff, // JS
+        0x7a7d7d, // TS
+        0x01b7c5, // React
       ]}
       ballSize={{ min: 0.8, max: 1.8 }}
     />
@@ -132,6 +150,7 @@ export function Portfolio() {
       Creativity involves breaking out of expected & repeatable patterns to look at things differently than ever before.
     </p>
   </div>
+</div>
 </section>
 
 
@@ -141,7 +160,7 @@ export function Portfolio() {
           {/* Category Filter */}
           <div className="flex justify-center mb-12">
             <div className="inline-flex flex-wrap gap-2 rounded-md bg-gray-100 dark:bg-gray-800 p-2">
-              {["all", "web", "mobile", "design"].map((category) => (
+              {["all"].map((category) => (
                 <button
                   key={category}
                   className={`px-4 py-2 text-sm font-semibold rounded-md transition-all ${category === "all"
@@ -169,7 +188,7 @@ export function Portfolio() {
                   />
                   <div className="absolute inset-0 flex items-center justify-center bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                     <Link
-                      href={`/portfolio/${project.id}`}
+                      href={`${project.link}`}
                       className="inline-flex items-center justify-center rounded-md border border-white px-5 py-2 text-sm font-medium text-white hover:bg-white hover:text-black transition-all focus:outline-none focus:ring-2 focus:ring-white"
                     >
                       View Details
@@ -259,7 +278,7 @@ export function Portfolio() {
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto">
             <h2 className="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">
-              Ready to Build Your Next Project?
+              {/* Ready to Build Your Next Project? */}
             </h2>
             <p className="text-lg md:text-xl mb-10 opacity-90">
               Let's connect and bring your vision to life with cutting-edge technology and expert guidance.
@@ -276,7 +295,6 @@ export function Portfolio() {
           </div>
         </div>
       </section>
-
     </div>
   );
 

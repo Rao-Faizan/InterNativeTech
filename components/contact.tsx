@@ -1,10 +1,14 @@
-"use client"
-import emailjs from '@emailjs/browser';
+"use client";
 
-import type React from "react"
-import { useState } from "react"
-import { FaMapMarkerAlt, FaPhoneAlt, FaEnvelope, FaClock } from 'react-icons/fa';
-import Ballpit from './Ballpit';
+import type React from "react";
+import { useState } from "react";
+import {
+  FaMapMarkerAlt,
+  FaPhoneAlt,
+  FaEnvelope,
+  FaClock,
+} from "react-icons/fa";
+import Ballpit from "./Ballpit";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -13,109 +17,60 @@ export default function Contact() {
     phone: "",
     subject: "",
     message: "",
-  })
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [formStatus, setFormStatus] = useState<string | null>(null)
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [formStatus, setFormStatus] = useState<string | null>(null);
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target
-    setFormData((prev) => ({ ...prev, [name]: value }))
-  }
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setFormStatus(null)
-  
-    const serviceID = 'service_x2exw8n'
-    const templateID = 'template_8kl41gq'
-    const userID = '7qpLD6VysB8J0DPDv'
-  
-    const templateParams = {
-      from_name: formData.name,
-      from_email: formData.email,
-      phone: formData.phone,
-      subject: formData.subject,
-      message: formData.message,
-    }
-  
-    try {
-      await emailjs.send(serviceID, templateID, templateParams, userID)
-      setFormStatus("Shukriya! Aap ka paighaam bhej diya gaya hai.")
-      setFormData({ name: "", email: "", phone: "", subject: "", message: "" })
-    } catch (error) {
-      console.error('Email send error:', error)
-      setFormStatus("Kuch masla hua, dubara koshish karein.")
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-  
+    e.preventDefault();
+    setIsSubmitting(true);
+    setFormStatus(null);
+  };
 
   return (
     <div className="bg-white dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-black py-20">
-        <div className="absolute inset-0 z-10 bg-[url('/placeholder.svg?height=800&width=1600')] bg-cover bg-center opacity-20"></div>
-        <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
-        {/* <div className="container relative z-30 mx-auto px-4">
-          <div className="mx-auto max-w-[800px] text-center">
-            <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
-              Contact Us
-            </h1>
-            <p className="text-xl text-gray-300">
-              Get in touch with our team to discuss your project or inquire about our services.
-            </p>
-          </div> */}
-        {/* </div> */}
-        <div
-  style={{
-    position: 'relative',
-    overflow: 'hidden',
-    height: '600px', // 👈 Fixed height taake ballpit poora dikh sake
-    width: '100%',
-    paddingTop: '50px', // Text ko neeche se start karaya
-    paddingLeft: '20px',
-    paddingRight: '20px',
-  }}
->
-  <div style={{ position: 'relative', zIndex: 2 }}>
-    <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white text-center transition-all duration-300 hover:text-green-600">
-    Contact Us
-    </h1>
-    <p className="text-xl text-center text-gray-300 mb-8">
-    Get in touch with our team to discuss your project or inquire about our services.
-    </p>
-  </div>
+      <section className="relative overflow-hidden bg-black ">
+         <div className="absolute inset-0 z-20 bg-gradient-to-b from-black/80 to-black/40"></div>
+         
+        
 
-  {/* Ballpit Layer */}
-  <div className="absolute inset-0 z-20 opacity-30">
-    <Ballpit 
-      className="coding-ballpit"
-      count={100}
-      followCursor={true}
-      friction={1.0}
-      colors={[
-        0xe34f26, // HTML
-        0x1572b6, // CSS
-        0xf7df1e, // JS
-        0x3178c6, // TS
-        0x61dafb, // React
-      ]}
-      ballSize={{ min: 0.8, max: 1.8 }}
-    />
-  </div>
+        {/* Ballpit Layer */}
+        <div className="absolute inset-0 z-20 opacity-30">
+          <Ballpit
+            className="coding-ballpit"
+            count={100}
+            followCursor={true}
+            friction={1.0}
+            colors={[
+              0x1C1917, // HTML
+              0x01b7c5, // CSS
+              0xffffff, // JS
+              0x7a7d7d, // TS
+              0x01b7c5, // React
+              
+            ]}
+            ballSize={{ min: 0.8, max: 1.8 }}
+          />
+        </div>
 
-  {/* Content */}
-  <div className="relative z-30 flex flex-col justify-center items-center text-center px-6 md:px-12 min-h-[600px]">
-    <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
-      Contact Us
-    </h1>
-    <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
-      Get in touch with our team to discuss your project or inquire about our services.
-    </p>
-  </div>
-</section>
-
+        {/* Content */}
+        <div className="relative z-30 flex flex-col justify-center items-center text-center px-6 md:px-12 min-h-[600px]">
+          <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
+            Contact Us
+          </h1>
+          <p className="text-xl text-gray-300 max-w-2xl leading-relaxed">
+            Get in touch with our team to discuss your project or inquire about
+            our services.
+          </p>
+        </div>
+      </section>
 
       {/* Contact Information */}
       <section className="py-16 md:py-24 dark:bg-gray-900">
@@ -123,10 +78,28 @@ export default function Contact() {
           <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {/* Reusable contact info component */}
             {[
-              { icon: FaMapMarkerAlt, title: "Our Location", content: "123 Tech Street, Innovation District, City, Country 12345" },
-              { icon: FaPhoneAlt, title: "Phone Number", content: "+1 (123) 456-7890\n+1 (987) 654-3210" },
-              { icon: FaEnvelope, title: "Email Address", content: "info@yoursoftwarehouse.com\nsupport@yoursoftwarehouse.com" },
-              { icon: FaClock, title: "Working Hours", content: "Monday - Friday: 9am - 6pm\nSaturday: 10am - 2pm" },
+              {
+                icon: FaMapMarkerAlt,
+                title: "Our Location",
+                content:
+                  "123 Tech Street, Innovation District, City, Country 12345",
+              },
+              {
+                icon: FaPhoneAlt,
+                title: "Phone Number",
+                content: "+1 (123) 456-7890\n+1 (987) 654-3210",
+              },
+              {
+                icon: FaEnvelope,
+                title: "Email Address",
+                content:
+                  "info@yoursoftwarehouse.com\nsupport@yoursoftwarehouse.com",
+              },
+              {
+                icon: FaClock,
+                title: "Working Hours",
+                content: "Monday - Friday: 9am - 6pm\nSaturday: 10am - 2pm",
+              },
             ].map(({ icon: Icon, title, content }, index) => (
               <div
                 key={index}
@@ -136,8 +109,12 @@ export default function Contact() {
                   <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-green-100 dark:bg-green-900/30">
                     <Icon className="h-6 w-6 text-green-600 dark:text-green-500 transition-all duration-300 hover:text-green-700" />
                   </div>
-                  <h3 className="mb-2 text-xl font-semibold dark:text-white transition-all duration-300 hover:text-green-600">{title}</h3>
-                  <p className="text-center text-gray-600 dark:text-gray-400">{content}</p>
+                  <h3 className="mb-2 text-xl font-semibold dark:text-white transition-all duration-300 hover:text-green-600">
+                    {title}
+                  </h3>
+                  <p className="text-center text-gray-600 dark:text-gray-400">
+                    {content}
+                  </p>
                 </div>
               </div>
             ))}
@@ -156,17 +133,21 @@ export default function Contact() {
               Send Us a Message
             </h3>
             <p className="text-gray-600 dark:text-gray-400">
-              Have a question, project idea, or want to learn more about our services? Fill out the form below and we'll
-              get back to you as soon as possible.
+              Have a question, project idea, or want to learn more about our
+              services? Fill out the form below and we'll get back to you as
+              soon as possible.
             </p>
           </div>
 
           <div className="mx-auto max-w-[800px]">
             <div className="rounded-lg border border-gray-200 dark:border-gray-700 bg-white dark:bg-gray-900 p-6 md:p-8">
-              <form onSubmit={handleSubmit} className="grid gap-6">
+              <form className="grid gap-6">
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="space-y-2">
-                    <label htmlFor="name" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <label
+                      htmlFor="name"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >
                       Your Name
                     </label>
                     <input
@@ -180,7 +161,10 @@ export default function Contact() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <label
+                      htmlFor="email"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >
                       Your Email
                     </label>
                     <input
@@ -197,7 +181,10 @@ export default function Contact() {
                 </div>
                 <div className="grid gap-4 md:grid-cols-2">
                   <div className="space-y-2">
-                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <label
+                      htmlFor="phone"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >
                       Phone Number
                     </label>
                     <input
@@ -210,7 +197,10 @@ export default function Contact() {
                     />
                   </div>
                   <div className="space-y-2">
-                    <label htmlFor="subject" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                    <label
+                      htmlFor="subject"
+                      className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                    >
                       Subject
                     </label>
                     <input
@@ -225,7 +215,10 @@ export default function Contact() {
                   </div>
                 </div>
                 <div className="space-y-2">
-                  <label htmlFor="message" className="block text-sm font-medium text-gray-700 dark:text-gray-300">
+                  <label
+                    htmlFor="message"
+                    className="block text-sm font-medium text-gray-700 dark:text-gray-300"
+                  >
                     Your Message
                   </label>
                   <textarea
@@ -264,5 +257,5 @@ export default function Contact() {
         </div>
       </section>
     </div>
-  )
+  );
 }
