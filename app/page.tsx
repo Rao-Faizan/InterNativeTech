@@ -4,7 +4,7 @@ import { FaDesktop, FaMobileAlt, FaChartBar, FaArrowRight } from "react-icons/fa
 import { Testimonials } from "@/components/testimonials";
 
 export default function Home() {
-  
+
   return (
     <div className="bg-[#FEEFEE] dark:bg-[#32322C] transition-colors duration-300">
       {/* Hero Section */}

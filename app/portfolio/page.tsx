@@ -6,9 +6,9 @@ export const metadata = {
 }
 
 export default function PortfolioPage() {
-return(
-  <div>
-    <Portfolio/>
-  </div>
-)
+  return (
+    <div>
+      <Portfolio />
+    </div>
+  )
 }

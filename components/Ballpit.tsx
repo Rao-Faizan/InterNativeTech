@@ -81,9 +81,9 @@ class X {
 
   render: () => void = this.#render.bind(this);
   onBeforeRender: (state: { elapsed: number; delta: number }) => void =
-    () => {};
-  onAfterRender: (state: { elapsed: number; delta: number }) => void = () => {};
-  onAfterResize: (size: SizeData) => void = () => {};
+    () => { };
+  onAfterRender: (state: { elapsed: number; delta: number }) => void = () => { };
+  onAfterResize: (size: SizeData) => void = () => { };
   isDisposed: boolean = false;
 
   constructor(config: XConfig) {
@@ -570,10 +570,10 @@ function createPointerData(
     position: new Vector2(),
     nPosition: new Vector2(),
     hover: false,
-    onEnter: () => {},
-    onMove: () => {},
-    onClick: () => {},
-    onLeave: () => {},
+    onEnter: () => { },
+    onMove: () => { },
+    onClick: () => { },
+    onLeave: () => { },
     ...options,
   };
   if (!pointerMap.has(options.domElement)) {

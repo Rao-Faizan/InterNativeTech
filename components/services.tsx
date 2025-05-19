@@ -1,15 +1,5 @@
 "use client";
-
-import {
-  FaDesktop,
-  FaMobileAlt,
-  FaChartBar,
-  FaCode,
-  FaDatabase,
-  FaCloud,
-  FaPalette,
-  FaShieldAlt,
-} from "react-icons/fa";
+import { FaMobileAlt, FaChartBar, FaCode, FaDatabase, FaCloud, FaPalette, FaShieldAlt, FaBook, FaGlobe, FaMagic, FaPencilRuler, FaSearch } from "react-icons/fa"
 import Ballpit from "@/components/Ballpit";
 import { motion, AnimatePresence } from "framer-motion";
 
@@ -52,12 +42,37 @@ export function Services() {
       title: "IT Consulting",
       description: "Expert advice to align technology with your business goals.",
     },
+    {
+      icon: <FaPencilRuler className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
+      title: "Logo Design",
+      description: "Unique and memorable logos that reflect your brand identity.",
+    },
+    {
+      icon: <FaGlobe className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
+      title: "Website Development",
+      description: "Responsive and modern websites tailored to your business objectives.",
+    },
+    {
+      icon: <FaBook className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
+      title: "eBook Publishing",
+      description: "Professional formatting and publishing services for digital books.",
+    },
+    {
+      icon: <FaMagic className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
+      title: "Logo Animation",
+      description: "Animated logo intros that bring your brand to life.",
+    },
+    {
+      icon: <FaSearch className="h-8 w-8 text-indigo-500 dark:text-indigo-400" />,
+      title: "SEO Services",
+      description: "Improve your visibility with keyword optimization and analytics-driven SEO.",
+    },
   ];
 
   return (
  
     <div className="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
-      
+
       {/* Hero Section */}
      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden  dark:bg-gray-950 text-[#FEEFEE]">
         <div className="absolute inset-0 z-0 opacity-2">
