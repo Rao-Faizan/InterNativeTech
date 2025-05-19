@@ -1,9 +1,10 @@
 "use client";
 import { FaMobileAlt, FaChartBar, FaCode, FaDatabase, FaCloud, FaPalette, FaShieldAlt, FaBook, FaGlobe, FaMagic, FaPencilRuler, FaSearch } from "react-icons/fa"
 import Ballpit from "@/components/Ballpit";
-import { motion, AnimatePresence } from "framer-motion";
 
 import { ChevronRight, Link, Moon, Sun } from "lucide-react"
+import { motion, AnimatePresence } from "framer-motion";
+
 
 export function Services() {
   const services = [
@@ -70,13 +71,13 @@ export function Services() {
   ];
 
   return (
- 
+
     <div className="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
 
       {/* Hero Section */}
-     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden  dark:bg-gray-950 text-[#FEEFEE]">
+      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden  dark:bg-gray-950 text-[#FEEFEE]">
         <div className="absolute inset-0 z-0 opacity-2">
-          <Ballpit 
+          <Ballpit
             count={100}
             followCursor={true}
             friction={0.95}
@@ -90,24 +91,24 @@ export function Services() {
           />
         </div>
 
-        <motion.div 
+        <motion.div
           className="relative z-10 container mx-auto px-6 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.h1 
+          <motion.h1
             className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.3, duration: 0.8 }}
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#8DA7BE] to-[#035F5C]">
-            Our Services
+              Our Services
             </span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto opacity-90 text-[#8DA7BE]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -115,17 +116,17 @@ export function Services() {
           >
             We're a team of passionate developers, designers, and strategists building exceptional software solutions.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8 }}
           >
-            
+
           </motion.div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
@@ -149,5 +150,5 @@ export function Services() {
         </div>
       </section>
     </div>
-   );
+  );
 }

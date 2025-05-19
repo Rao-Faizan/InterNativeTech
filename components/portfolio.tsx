@@ -309,7 +309,7 @@ export default function Portfolio() {
             </span>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 dark:text-[#FEEFEE]">
               <span className="relative inline-block">
-                <span className="relative z-10">Selected Works</span>
+                {/* <span className="relative z-10">Selected Works</span> */}
                 <motion.span 
                   className="absolute bottom-0 left-0 w-full h-3 bg-[#8DA7BE] dark:bg-[#035F5C] opacity-30"
                   initial={{ scaleX: 0 }}
