@@ -11,6 +11,9 @@ import {
   FaShieldAlt,
 } from "react-icons/fa";
 import Ballpit from "@/components/Ballpit";
+import { motion, AnimatePresence } from "framer-motion";
+
+import { ChevronRight, Link, Moon, Sun } from "lucide-react"
 
 export function Services() {
   const services = [
@@ -52,39 +55,69 @@ export function Services() {
   ];
 
   return (
+ 
     <div className="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
       
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-black w-full min-h-[600px] flex flex-col justify-center items-center text-center">
-        {/* Text Content */}
-        <div className="relative z-20 px-2 md:px-8">
-          <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-white transition-all duration-300 hover:text-green-600">
-            About Us
-          </h1>
-          <p className="text-xl text-gray-300 mb-8">
-            We're a team of passionate developers, designers, and strategists building exceptional software solutions.
-          </p>
-        </div>
-
-        {/* Ballpit Background */}
-        <div className="absolute inset-0 z-10 opacity-30">
-          <Ballpit
-            className="coding-ballpit"
-            count={150}
-            friction={1.0}
+     <section className="relative w-full h-screen flex items-center justify-center overflow-hidden  dark:bg-gray-950 text-[#FEEFEE]">
+        <div className="absolute inset-0 z-0 opacity-2">
+          <Ballpit 
+            count={100}
             followCursor={true}
+            friction={0.95}
             colors={[
-              0x1C1917, // HTML
-              0x01b7c5, // CSS
-              0xffffff, // JS
-              0x7a7d7d, // TS
-              0x01b7c5, // React
+              0x1C3144, // Prussian Blue
+              0x035F5C, // Deep Jungle Green
+              0x8DA7BE, // Pewter Blue
+              0xFEEFEE, // Snow
             ]}
-            ballSize={{ min: 0.8, max: 1.8 }}
+            ballSize={{ min: 1, max: 3 }}
           />
         </div>
-      </section>
 
+        <motion.div 
+          className="relative z-10 container mx-auto px-6 text-center"
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.h1 
+            className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3, duration: 0.8 }}
+          >
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-[#8DA7BE] to-[#035F5C]">
+            Our Services
+            </span>
+          </motion.h1>
+          
+          <motion.p 
+            className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto opacity-90 text-[#8DA7BE]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.5, duration: 0.8 }}
+          >
+            We're a team of passionate developers, designers, and strategists building exceptional software solutions.
+          </motion.p>
+          
+          <motion.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.7, duration: 0.8 }}
+          >
+            
+          </motion.div>
+        </motion.div>
+
+        <motion.div 
+          className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
+          animate={{ y: [0, 10, 0] }}
+          transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
+        >
+          <ChevronRight className="w-8 h-8 text-[#8DA7BE] rotate-90" />
+        </motion.div>
+      </section>
       {/* Services Section */}
       <section className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
@@ -101,5 +134,5 @@ export function Services() {
         </div>
       </section>
     </div>
-  );
+   );
 }
