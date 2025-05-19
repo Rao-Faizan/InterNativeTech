@@ -1,6 +1,5 @@
-import { Portfolio } from "@/components/portfolio"
-
-
+ 
+import Portfolio from "@/components/portfolio"
 export const metadata = {
   title: "Portfolio | InterNative Tech",
   description: "Explore our portfolio of successful projects and case studies",
