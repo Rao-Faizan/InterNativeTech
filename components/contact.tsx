@@ -116,7 +116,7 @@ export default function Contact() {
   };
 
   return (
-    <div className={`bg-[${colors.light}] dark:bg-[${colors.dark}] overflow-hidden`}>
+    <div className="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
       
         <section className="relative w-full h-screen flex items-center justify-center overflow-hidden  text-[#FEEFEE]">
         <div className="absolute inset-0 z-0 opacity-2">
@@ -179,7 +179,7 @@ export default function Contact() {
       </section>
 
       {/* Contact Information */}
-      <section className="py-16 md:py-24 bg-[#FEEFEE] dark:bg-[#32322C]">
+      <section className="py-16 md:py-24 bg-[#FEEFEE] dark:bg-gray-950">
         <div className="container mx-auto px-4">
           <motion.div 
             variants={containerVariants}

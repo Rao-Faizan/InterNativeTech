@@ -211,26 +211,11 @@ export default function Portfolio() {
       );
 
   return (
-    <div className={`flex flex-col min-h-screen bg-[#FEEFEE] dark:bg-[#32322C] transition-colors duration-500`}>
-      {/* Animated Theme Toggle */}
-      <motion.button
-        onClick={toggleTheme}
-        className="fixed z-50 bottom-6 right-6 bg-[#8DA7BE] dark:bg-[#035F5C] p-3 rounded-full shadow-lg"
-        aria-label="Toggle dark mode"
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.9 }}
-      >
-        {theme === "light" ? (
-          <Moon className="w-5 h-5 text-[#1C3144]" />
-        ) : (
-          <Sun className="w-5 h-5 text-[#FEEFEE]" />
-        )}
-      </motion.button>
-
-      {/* Hero Section with Particles */}
-      <section className="relative w-full h-screen flex items-center justify-center overflow-hidden  text-[#FEEFEE]">
+    <div className={`flex flex-col min-h-screen bg-[#FEEFEE] dark:bg-[[#1C3144]] transition-colors duration-500`}>
+      
+        <section className="relative w-full h-screen flex items-center justify-center overflow-hidden  dark:bg-gray-950 text-[#FEEFEE]">
         <div className="absolute inset-0 z-0 opacity-2">
-          <Ballpit 
+          <Ballpit
             count={100}
             followCursor={true}
             friction={0.95}
@@ -244,13 +229,13 @@ export default function Portfolio() {
           />
         </div>
 
-        <motion.div 
+        <motion.div
           className="relative z-10 container mx-auto px-6 text-center"
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <motion.h1 
+          <motion.h1
             className="text-5xl md:text-7xl font-bold mb-8 leading-tight"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -260,8 +245,8 @@ export default function Portfolio() {
               Exceptional Digital Experiences
             </span>
           </motion.h1>
-          
-          <motion.p 
+
+          <motion.p
             className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto opacity-90 text-[#8DA7BE]"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -269,33 +254,36 @@ export default function Portfolio() {
           >
             We craft stunning, high-performance websites that drive results for businesses worldwide.
           </motion.p>
-          
+
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ delay: 0.7, duration: 0.8 }}
           >
-            <Link
+             <Link
               href="#portfolio"
               className="inline-flex items-center gap-2 rounded-full bg-[#035F5C] hover:bg-[#024a48] text-[#FEEFEE] font-semibold text-lg px-8 py-4 transition-all duration-300 transform hover:scale-105"
             >
               Explore Our Work
               <ChevronRight className="w-5 h-5" />
             </Link>
+
           </motion.div>
         </motion.div>
 
-        <motion.div 
+        <motion.div
           className="absolute bottom-10 left-1/2 transform -translate-x-1/2"
           animate={{ y: [0, 10, 0] }}
           transition={{ repeat: Infinity, duration: 2, ease: "easeInOut" }}
         >
+           
           <ChevronRight className="w-8 h-8 text-[#8DA7BE] rotate-90" />
+         
         </motion.div>
       </section>
 
       {/* Portfolio Section */}
-      <section id="portfolio" className="py-20 bg-[#FEEFEE] dark:bg-[#32322C]">
+      <section id="portfolio" className="py-20 bg-[#FEEFEE]white dark:bg-gray-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
         <div className="container mx-auto px-6">
           <motion.div
             initial={{ opacity: 0 }}
@@ -352,7 +340,7 @@ export default function Portfolio() {
 
           {/* Projects Grid */}
           <motion.div
-            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 "
             initial={{ opacity: 0 }}
             whileInView={{ opacity: 1 }}
             transition={{ staggerChildren: 0.1 }}

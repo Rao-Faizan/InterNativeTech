@@ -6,7 +6,7 @@ import { Testimonials } from "@/components/testimonials";
 export default function Home() {
 
   return (
-    <div className="bg-[#FEEFEE] dark:bg-[#32322C] transition-colors duration-300">
+    <div className="bg-[#FEEFEE] dark:bg-gray-950 transition-colors duration-300">
       {/* Hero Section */}
       <section className="relative h-screen overflow-hidden">
         {/* Background Image */}
@@ -128,7 +128,7 @@ export default function Home() {
             {[
               {
                 id: 1,
-                img: '/prepdummy1.jpg',
+                img: '/prepdummy.jpg.png',
                 title: 'Preparation Project',
                 description: 'PrepDummy offers high-yield MCQs, live tests, insightful analytics, and expert-led courses to help students excel in exams.',
                 link: 'https://prepdummy.com/',
@@ -148,14 +148,14 @@ export default function Home() {
                 link: 'https://rainwaterharvesting.services',
               },
             ].map((item) => (
-              <div key={item.id} className="rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:scale-105 transition-all bg-[#FEEFEE] dark:bg-[#1C3144]">
+              <div key={item.id} className="rounded-2xl overflow-hidden shadow-md hover:shadow-2xl hover:scale-105 transition-all bg-[#FEEFEE] dark:bg-gray-950">
                 <div className="relative group">
                   <Image
                     src={item.img}
                     alt={item.title}
                     width={600}
                     height={400}
-                    className="w-full object-cover aspect-[4/3] transition-transform group-hover:scale-110"
+                    className="w-full object-cover aspect-[4/3] transition-transform group-hover:scale-full"
                   />
                   
                   <div className="absolute inset-0 bg-[#1C3144]/70 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">

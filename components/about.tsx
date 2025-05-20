@@ -41,45 +41,7 @@ export function About() {
   }
 
   return (
-    <div className={`bg-[${colors.light}] dark:bg-[${colors.dark}] text-[${colors.primary}] dark:text-[${colors.light}] transition-colors duration-300`}>
-      {/* Hero Section
-      <section className="relative overflow-hidden bg-[${colors.primary}] w-full min-h-[600px] flex flex-col justify-center items-center text-center">
-        Text Content
-        <motion.div 
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="relative z-20 px-2 md:px-8"
-        >
-          <h1 className="text-4xl font-bold tracking-tight md:text-5xl lg:text-6xl mb-4 text-[${colors.light}] transition-all duration-300 hover:text-[${colors.secondary}]">
-            About Us
-          </h1>
-          <motion.p
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 0.3, duration: 0.8 }}
-            className="text-xl text-[${colors.secondary}] mb-8"
-          >
-            We're a team of passionate developers, designers, and strategists building exceptional software solutions.
-          </motion.p>
-        </motion.div>
-     */}
-        {/* Ballpit Background */}
-        {/* <div className="absolute inset-0 z-10 ">
-          <Ballpit 
-            count={150}
-            friction={1.0}
-            followCursor={true}
-            colors={[
-              0x1C3144, // Primary dark blue
-              0x035F5C, // Teal accent
-              0x8DA7BE, // Light blue
-              0xFEEFEE, // Off-white
-            ]}
-            ballSize={{ min: 0.8, max: 1.8 }}
-          />
-        </div>
-      </section> */}
+    <div className="bg-white dark:bg-gray-950 text-gray-800 dark:text-gray-200 transition-colors duration-300">
       {/* Hero Section with Particles */}
       <section className="relative w-full h-screen flex items-center justify-center overflow-hidden  text-[#FEEFEE]">
         <div className="absolute inset-0 z-0 opacity-2">
